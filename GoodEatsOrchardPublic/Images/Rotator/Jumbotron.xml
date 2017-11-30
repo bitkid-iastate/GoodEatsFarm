@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+
+  <Ad>
+    <ImageUrl>images/image11.jpg</ImageUrl>
+    <NavigateUrl>http://msdn.microsoft.com</NavigateUrl>
+    <AlternateText>Support for developers</AlternateText>
+    <Impressions>40</Impressions>
+    <Keyword>Support</Keyword>
+  </Ad>
+
+
+  <Ad>
+    <ImageUrl>images/image3.jpg</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com/technet</NavigateUrl>
+    <AlternateText>Support for IT Professionals</AlternateText>
+    <Impressions>40</Impressions>
+    <Keyword>Support</Keyword>
+  </Ad>
+
+
+  <Ad>
+    <ImageUrl>images/IMG_1276.jpg</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com/technet</NavigateUrl>
+    <AlternateText>Support for IT Professionals</AlternateText>
+    <Impressions>40</Impressions>
+    <Keyword>Support</Keyword>
+  </Ad>
+
+
+
+  <Ad>
+    <ImageUrl>images/image22.jpg</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com/technet</NavigateUrl>
+    <AlternateText>Support for IT Professionals</AlternateText>
+    <Impressions>40</Impressions>
+    <Keyword>Support</Keyword>
+  </Ad>
+
+</Advertisements>

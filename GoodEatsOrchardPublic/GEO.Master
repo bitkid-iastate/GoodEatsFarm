@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GEO.master.cs" Inherits="GoodEatsOrchardPublic.GEO" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Good Eats Farm & Orchard</title>
+    <link rel="stylesheet" type="text/css" href="Content/GEO.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <ul id="nav-bar">
+        <li class="nav-item">
+            <a href="/PublicPages/News.aspx" class="nav-link">NEWS</a>
+        </li>
+        <li class="nav-item">
+            <a href="/PublicPages/About.aspx" class="nav-link">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a href="/PublicPages/Products.aspx" class="nav-link">PRODUCTS</a>
+            <div class="dropdown-menu">
+                <ul>
+                    <li><a href="/PublicPages/Vegetables.aspx">Vegtables</a></li>
+                    <li><a href="/PublicPages/Fruits.aspx">Fruits</a></li>
+                    <li><a href="/PublicPages/Eggs.aspx">Poultry & Eggs</a></li>
+                    <li><a href="/PublicPages/Flowers.aspx">Flowers</a></li>
+                </ul>
+
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="/PublicPages/Contact.aspx" class="nav-link">CONTACT US</a>
+        </li>
+        <li class="nav-item">
+            <a href="/PublicPages/Calendar.aspx" class="nav-link">CALENDAR and EVENTS</a>
+        </li>
+        <li class="nav-item">
+            <a href="/PublicPages/Gallery.aspx" class="nav-link">GALLERY</a>
+        </li>
+    </ul>
+
+    <span id="title-banner"><a href="../Home.aspx">
+        <img src="/Images/GEFlogowhitev4.png" /></a></span>
+
+    <span id="address-bar">16967 118th Ave. Indianola, Iowa 50125 &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp (515) 491-0269</span>
+    <br />
+    <br />
+
+
+
+
+    <form id="form1" runat="server">
+        <div>
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <br />
+    <br />
+    <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a href="Login.aspx">Login</a></footer>
+</body>
+</html>
