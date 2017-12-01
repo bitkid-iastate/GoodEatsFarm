@@ -11,7 +11,20 @@ namespace GoodEatsOrchardPublic
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["loggedIn"] == "yes")
+            {
+                loggedInBanner.Visible = true;
+            }
+            else
+            {
+                loggedInBanner.Visible = false;
+            }
+        }
 
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("/Home.aspx");
         }
     }
 }

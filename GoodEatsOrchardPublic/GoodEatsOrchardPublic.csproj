@@ -129,6 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apples.aspx" />
+    <Content Include="App_Data\jumbotron.xml" />
+    <Content Include="dash.aspx" />
     <Content Include="Images\appleTree.jpg" />
     <Content Include="Images\BirdsEye.JPG" />
     <Content Include="Images\BirdsEyeAlt.jpg" />
@@ -251,6 +253,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Images\Rotator\Jumbotron.xml" />
     <Content Include="PublicPages\News.aspx" />
+    <Content Include="PublicPages\Pass.aspx" />
     <Content Include="PublicPages\Products.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -294,6 +297,15 @@
     </Compile>
     <Compile Include="Apples.aspx.designer.cs">
       <DependentUpon>Apples.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Announcement.cs" />
+    <Compile Include="Code\Methods.cs" />
+    <Compile Include="dash.aspx.cs">
+      <DependentUpon>dash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dash.aspx.designer.cs">
+      <DependentUpon>dash.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pears.aspx.cs">
       <DependentUpon>Pears.aspx</DependentUpon>
@@ -391,6 +403,13 @@
     <Compile Include="PublicPages\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PublicPages\Pass.aspx.cs">
+      <DependentUpon>Pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicPages\Pass.aspx.designer.cs">
+      <DependentUpon>Pass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PublicPages\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,7 +434,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Protected\" />
   </ItemGroup>
   <ItemGroup>
