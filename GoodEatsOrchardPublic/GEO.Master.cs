@@ -11,6 +11,7 @@ namespace GoodEatsOrchardPublic
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Displays this banner if logged in.
             if ((string)Session["loggedIn"] == "yes")
             {
                 loggedInBanner.Visible = true;
@@ -21,10 +22,11 @@ namespace GoodEatsOrchardPublic
             }
         }
 
+        // This button logs the user out.
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("/PagesPublic/Home.aspx");
         }
     }
 }

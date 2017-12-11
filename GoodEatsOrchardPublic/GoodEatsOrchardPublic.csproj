@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BotDetect, Version=4.2.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.2.0\lib\net46\BotDetect.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.2.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.2.0\lib\net46\BotDetect.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,6 +61,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -128,37 +135,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Apples.aspx" />
+    <Content Include="Images\Rotator\image1.JPG" />
+    <Content Include="PagesPublic\Apples.aspx" />
     <Content Include="App_Data\jumbotron.xml" />
-    <Content Include="dash.aspx" />
+    <Content Include="PagesAdmin\dash.aspx" />
     <Content Include="Images\appleTree.jpg" />
     <Content Include="Images\BirdsEye.JPG" />
-    <Content Include="Images\BirdsEyeAlt.jpg" />
-    <Content Include="Images\chkEggs.JPG" />
-    <Content Include="Images\duckEggs.JPG" />
-    <Content Include="Images\Empire.jpg" />
-    <Content Include="Images\Fuji.jpg" />
-    <Content Include="Images\GoldDelicious.jpg" />
-    <Content Include="Images\GrannySmith.jpg" />
-    <Content Include="Images\Gravensteins.jpg" />
-    <Content Include="Images\Liberty.jpg" />
-    <Content Include="Images\thaiBasil.JPG" />
-    <Content Include="Images\thaiPeppers.JPG" />
-    <Content Include="Images\Johnagold.jpg" />
-    <Content Include="Images\Johnagold2.jpg" />
-    <Content Include="Images\liveDucks.JPG" />
-    <Content Include="Images\IMG_2665.JPG" />
-    <Content Include="Images\IMG_2676.JPG" />
+    <Content Include="Images\Products\chkEggs.JPG" />
+    <Content Include="Images\Products\duckEggs.JPG" />
+    <Content Include="Images\Products\Empire.jpg" />
+    <Content Include="Images\Products\Fuji.jpg" />
+    <Content Include="Images\Products\GoldDelicious.jpg" />
+    <Content Include="Images\Products\GrannySmith.jpg" />
+    <Content Include="Images\Products\Gravensteins.jpg" />
+    <Content Include="Images\Products\Liberty.jpg" />
+    <Content Include="Images\Products\thaiBasil.JPG" />
+    <Content Include="Images\Products\thaiPeppers.JPG" />
+    <Content Include="Images\Products\Johnagold2.jpg" />
+    <Content Include="Images\Products\liveDucks.JPG" />
+    <Content Include="Images\Products\IMG_2665.JPG" />
+    <Content Include="Images\Products\IMG_2676.JPG" />
     <Content Include="Mapster\jquery.imagemapster.js" />
     <Content Include="Mapster\jquery.imagemapster.min.js" />
-    <Content Include="Pears.aspx" />
-    <Content Include="Plums.aspx" />
-    <Content Include="PublicPages\About.aspx" />
-    <Content Include="PublicPages\Calendar.aspx" />
-    <Content Include="PublicPages\Contact.aspx" />
-    <Content Include="PublicPages\Eggs.aspx" />
-    <Content Include="PublicPages\Flowers.aspx" />
-    <Content Include="PublicPages\Fruits.aspx" />
+    <Content Include="PagesPublic\Applez.aspx" />
+    <Content Include="PagesPublic\Pears.aspx" />
+    <Content Include="PagesPublic\Plums.aspx" />
+    <Content Include="PagesPublic\About.aspx" />
+    <Content Include="PagesPublic\Calendar.aspx" />
+    <Content Include="PagesPublic\Contact.aspx" />
+    <Content Include="PagesPublic\Eggs.aspx" />
+    <Content Include="PagesPublic\Flowers.aspx" />
+    <Content Include="PagesPublic\Fruits.aspx" />
     <Content Include="galleria\galleria-1.5.7.js" />
     <Content Include="galleria\galleria-1.5.7.min.js" />
     <Content Include="galleria\plugins\flickr\flickr-demo.html" />
@@ -213,30 +220,18 @@
     <Content Include="galleria\themes\fullscreen\r.gif" />
     <Content Include="galleria\themes\fullscreen\up-neg.gif" />
     <Content Include="galleria\themes\fullscreen\up.gif" />
-    <Content Include="PublicPages\Gallery.aspx" />
-    <Content Include="Images\2015 Lexus RC 350 AWD  F-Sport Package  Lexus Sportiest Vehicle!!! 2.jpg" />
+    <Content Include="PagesPublic\Gallery.aspx" />
     <Content Include="Images\facebook-logo-button.svg" />
     <Content Include="Images\facebook.svg" />
-    <Content Include="Images\GEFlogowhite.png" />
-    <Content Include="Images\GEFlogowhitev3.png" />
     <Content Include="Images\GEFlogowhitev4.png" />
-    <Content Include="Images\image1.JPG" />
-    <Content Include="Images\image11.JPG" />
-    <Content Include="Images\image11v2.JPG" />
-    <Content Include="Images\image111.JPG" />
-    <Content Include="Images\image2.JPG" />
-    <Content Include="Images\image22v2.JPG" />
-    <Content Include="Images\image3.JPG" />
-    <Content Include="Images\image33.JPG" />
-    <Content Include="Images\image333.JPG" />
-    <Content Include="Images\IMG_0739 %282%29.jpg" />
-    <Content Include="Images\IMG_1204.jpg" />
-    <Content Include="AdminPages\Dashboard.aspx" />
+    <Content Include="Images\Rotator\image11v2.JPG" />
+    <Content Include="Images\Rotator\image2.JPG" />
+    <Content Include="Images\Rotator\image22v2.JPG" />
+    <Content Include="Images\Rotator\image33.JPG" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Images\GEFlogo.png" />
     <Content Include="Content\GEO.css" />
-    <Content Include="Images\IMG_1276.jpg" />
+    <Content Include="Images\Rotator\IMG_1276.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -247,14 +242,21 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="GoodEatsFarm.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GoodEatsFarm.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="GoodEatsFarm.dbml.layout">
+      <DependentUpon>GoodEatsFarm.dbml</DependentUpon>
+    </None>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="GEO.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Home.aspx" />
-    <Content Include="Images\Rotator\Jumbotron.xml" />
-    <Content Include="PublicPages\News.aspx" />
-    <Content Include="PublicPages\Pass.aspx" />
-    <Content Include="PublicPages\Products.aspx" />
+    <Content Include="PagesPublic\Home.aspx" />
+    <Content Include="PagesPublic\News.aspx" />
+    <Content Include="PagesPublic\Pass.aspx" />
+    <Content Include="PagesPublic\Products.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -283,7 +285,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="PublicPages\Vegetables.aspx" />
+    <Content Include="PagesPublic\Vegetables.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -291,102 +293,107 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apples.aspx.cs">
+    <Compile Include="PagesPublic\Apples.aspx.cs">
       <DependentUpon>Apples.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Apples.aspx.designer.cs">
+    <Compile Include="PagesPublic\Apples.aspx.designer.cs">
       <DependentUpon>Apples.aspx</DependentUpon>
     </Compile>
     <Compile Include="Code\Announcement.cs" />
     <Compile Include="Code\Methods.cs" />
-    <Compile Include="dash.aspx.cs">
+    <Compile Include="PagesAdmin\dash.aspx.cs">
       <DependentUpon>dash.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="dash.aspx.designer.cs">
+    <Compile Include="PagesAdmin\dash.aspx.designer.cs">
       <DependentUpon>dash.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pears.aspx.cs">
+    <Compile Include="GoodEatsFarm.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoodEatsFarm.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Applez.aspx.cs">
+      <DependentUpon>Applez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\Applez.aspx.designer.cs">
+      <DependentUpon>Applez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Pears.aspx.cs">
       <DependentUpon>Pears.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pears.aspx.designer.cs">
+    <Compile Include="PagesPublic\Pears.aspx.designer.cs">
       <DependentUpon>Pears.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Plums.aspx.cs">
+    <Compile Include="PagesPublic\Plums.aspx.cs">
       <DependentUpon>Plums.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Plums.aspx.designer.cs">
+    <Compile Include="PagesPublic\Plums.aspx.designer.cs">
       <DependentUpon>Plums.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\About.aspx.cs">
+    <Compile Include="PagesPublic\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\About.aspx.designer.cs">
+    <Compile Include="PagesPublic\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="PublicPages\Calendar.aspx.cs">
+    <Compile Include="PagesPublic\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Calendar.aspx.designer.cs">
+    <Compile Include="PagesPublic\Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\Contact.aspx.cs">
+    <Compile Include="PagesPublic\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Contact.aspx.designer.cs">
+    <Compile Include="PagesPublic\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPages\Dashboard.aspx.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminPages\Dashboard.aspx.designer.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="PublicPages\Eggs.aspx.cs">
+    <Compile Include="PagesPublic\Eggs.aspx.cs">
       <DependentUpon>Eggs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Eggs.aspx.designer.cs">
+    <Compile Include="PagesPublic\Eggs.aspx.designer.cs">
       <DependentUpon>Eggs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\Flowers.aspx.cs">
+    <Compile Include="PagesPublic\Flowers.aspx.cs">
       <DependentUpon>Flowers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Flowers.aspx.designer.cs">
+    <Compile Include="PagesPublic\Flowers.aspx.designer.cs">
       <DependentUpon>Flowers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\Fruits.aspx.cs">
+    <Compile Include="PagesPublic\Fruits.aspx.cs">
       <DependentUpon>Fruits.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Fruits.aspx.designer.cs">
+    <Compile Include="PagesPublic\Fruits.aspx.designer.cs">
       <DependentUpon>Fruits.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\Gallery.aspx.cs">
+    <Compile Include="PagesPublic\Gallery.aspx.cs">
       <DependentUpon>Gallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Gallery.aspx.designer.cs">
+    <Compile Include="PagesPublic\Gallery.aspx.designer.cs">
       <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
+    <Compile Include="PagesPublic\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
+    <Compile Include="PagesPublic\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="GEO.Master.cs">
@@ -396,33 +403,33 @@
     <Compile Include="GEO.Master.designer.cs">
       <DependentUpon>GEO.Master</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\News.aspx.cs">
+    <Compile Include="PagesPublic\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\News.aspx.designer.cs">
+    <Compile Include="PagesPublic\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\Pass.aspx.cs">
+    <Compile Include="PagesPublic\Pass.aspx.cs">
       <DependentUpon>Pass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Pass.aspx.designer.cs">
+    <Compile Include="PagesPublic\Pass.aspx.designer.cs">
       <DependentUpon>Pass.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PublicPages\Products.aspx.cs">
+    <Compile Include="PagesPublic\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Products.aspx.designer.cs">
+    <Compile Include="PagesPublic\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PublicPages\Vegetables.aspx.cs">
+    <Compile Include="PagesPublic\Vegetables.aspx.cs">
       <DependentUpon>Vegetables.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PublicPages\Vegetables.aspx.designer.cs">
+    <Compile Include="PagesPublic\Vegetables.aspx.designer.cs">
       <DependentUpon>Vegetables.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -434,7 +441,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Protected\" />
+    <Folder Include="Images\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -445,6 +452,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

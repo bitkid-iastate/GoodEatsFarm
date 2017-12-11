@@ -16,36 +16,36 @@
         <div>
     <ul id="nav-bar">
         <li class="nav-item">
-            <a href="/PublicPages/News.aspx" class="nav-link">NEWS</a>
+            <a href="/PagesPublic/News.aspx" class="nav-link">NEWS</a>
         </li>
         <li class="nav-item">
-            <a href="/PublicPages/About.aspx" class="nav-link">ABOUT US</a>
+            <a href="/PagesPublic/About.aspx" class="nav-link">ABOUT US</a>
         </li>
         <li class="nav-item">
-            <a href="/PublicPages/Products.aspx" class="nav-link">PRODUCTS</a>
+            <a href="/PagesPublic/Products.aspx" class="nav-link">PRODUCTS</a>
             <div class="dropdown-menu">
                 <ul>
-                    <li><a href="/PublicPages/Vegetables.aspx">Vegtables</a></li>
-                    <li><a href="/PublicPages/Fruits.aspx">Fruits</a></li>
-                    <li><a href="/PublicPages/Eggs.aspx">Poultry & Eggs</a></li>
-                    <li><a href="/PublicPages/Flowers.aspx">Flowers</a></li>
+                    <li><a href="/PagesPublic/Vegetables.aspx">Vegtables</a></li>
+                    <li><a href="/PagesPublic/Fruits.aspx">Fruits</a></li>
+                    <li><a href="/PagesPublic/Eggs.aspx">Poultry & Eggs</a></li>
+                    <li><a href="/PagesPublic/Flowers.aspx">Flowers</a></li>
                 </ul>
 
             </div>
         </li>
         <li class="nav-item">
-            <a href="/PublicPages/Contact.aspx" class="nav-link">CONTACT US</a>
+            <a href="/PagesPublic/Contact.aspx" class="nav-link">CONTACT US</a>
         </li>
         <li class="nav-item">
-            <a href="/PublicPages/Calendar.aspx" class="nav-link">CALENDAR and EVENTS</a>
+            <a href="/PagesPublic/Calendar.aspx" class="nav-link">CALENDAR and EVENTS</a>
         </li>
         <li class="nav-item">
-            <a href="/PublicPages/Gallery.aspx" class="nav-link">GALLERY</a>
+            <a href="/PagesPublic/Gallery.aspx" class="nav-link">GALLERY</a>
         </li>
       
 <asp:PlaceHolder ID="loggedInBanner" runat="server" Visible="False">
         <li>You are logged in.</li>
-    <li><a href="/dash.aspx">dashboard</a>
+    <li><a href="/PagesAdmin/dash.aspx">dashboard</a>
             <asp:Button ID="btnLogOut" runat="server" Text="Logout" OnClick="btnLogOut_Click" /></li>
             
         
@@ -53,7 +53,7 @@
         
     </ul>
 
-    <span id="title-banner"><a href="../Home.aspx">
+    <span id="title-banner"><a href="/PagesPublic/Home.aspx">
         <img src="/Images/GEFlogowhitev4.png" /></a></span>
 
     <span id="address-bar">16967 118th Ave. Indianola, Iowa 50125 &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -72,7 +72,7 @@
     
     <br />
     <br />
-    <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a href="/PublicPages/Pass.aspx">Login</a></footer>
+    <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a href="/PagesPublic/Pass.aspx">Login</a></footer>
 
     </form>
 </body>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GoodEatsFarm">
+  <DataContextMoniker Name="/GoodEatsFarmDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6252f39e-6036-49e2-90fa-d1d5c9984dce" absoluteBounds="5.125, 3.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/GoodEatsFarmDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6beeaea-d304-4570-aa04-9a3b9ef2e9ac" absoluteBounds="5.14, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" absoluteBounds="6.375, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GoodEatsFarmDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d02f63b7-962b-44e0-b85f-b79791c26989" absoluteBounds="6.39, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 2.7612939453125); (6.75 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GoodEatsFarmDataContext/Category/Category_Product" />
+      <nodes>
+        <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
+        <classShapeMoniker Id="6252f39e-6036-49e2-90fa-d1d5c9984dce" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.07431705603966 : 1.375); (7.07431705603966 : 1.125); (7.69000117938702 : 1.125); (7.69000117938702 : 1.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GoodEatsFarmDataContext/Category/Category_Category" />
+      <nodes>
+        <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
+        <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
