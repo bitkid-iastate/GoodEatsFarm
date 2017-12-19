@@ -2,30 +2,49 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GoodEatsFarm">
   <DataContextMoniker Name="/GoodEatsFarmDataContext" />
   <nestedChildShapes>
-    <classShape Id="6252f39e-6036-49e2-90fa-d1d5c9984dce" absoluteBounds="5.125, 3.25, 2, 1.9631982421875">
-      <DataClassMoniker Name="/GoodEatsFarmDataContext/Product" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d6beeaea-d304-4570-aa04-9a3b9ef2e9ac" absoluteBounds="5.14, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" absoluteBounds="6.375, 1.375, 2, 1.3862939453125">
       <DataClassMoniker Name="/GoodEatsFarmDataContext/Category" />
       <nestedChildShapes>
         <elementListCompartment Id="d02f63b7-962b-44e0-b85f-b79791c26989" absoluteBounds="6.39, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.75 : 2.7612939453125); (6.75 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GoodEatsFarmDataContext/Category/Category_Product" />
-      <nodes>
-        <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
-        <classShapeMoniker Id="6252f39e-6036-49e2-90fa-d1d5c9984dce" />
-      </nodes>
-    </associationConnector>
     <associationConnector edgePoints="[(7.07431705603966 : 1.375); (7.07431705603966 : 1.125); (7.69000117938702 : 1.125); (7.69000117938702 : 1.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GoodEatsFarmDataContext/Category/Category_Category" />
       <nodes>
         <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
         <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cec72e65-3c99-414e-857d-0c19cbd66953" absoluteBounds="5.375, 3.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GoodEatsFarmDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6b9820d-192c-4d77-8c0d-eaf1204c9b7e" absoluteBounds="5.39, 3.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.28715852801983 : 2.7612939453125); (7.28715852801983 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GoodEatsFarmDataContext/Category/Category_Product" />
+      <nodes>
+        <classShapeMoniker Id="8b50db08-8242-4a9d-9217-c8dc27d2a1a4" />
+        <classShapeMoniker Id="cec72e65-3c99-414e-857d-0c19cbd66953" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0399b14f-3fd8-4877-97e0-9867faa5fc3d" absoluteBounds="2.5, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GoodEatsFarmDataContext/New" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7d25984-357c-46a0-835f-286cd5e4302b" absoluteBounds="2.5150000000000006, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dcb32cfe-d058-4c4b-bcb2-80b9f0283d6c" absoluteBounds="2.375, 3.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GoodEatsFarmDataContext/NewsImg" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d13a9508-f580-45f9-9a73-0939bf1f6eb9" absoluteBounds="2.3899999999999997, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.4375 : 2.7612939453125); (3.4375 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GoodEatsFarmDataContext/New/New_NewsImg" />
+      <nodes>
+        <classShapeMoniker Id="0399b14f-3fd8-4877-97e0-9867faa5fc3d" />
+        <classShapeMoniker Id="dcb32cfe-d058-4c4b-bcb2-80b9f0283d6c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -20,18 +20,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-    <br />
-   
-
-   <div class="galleria">
-       
-           <img src="/Images/IMG_1204.jpg" date-title:"captioned" data-description="also caption"/>
-        <img src="/Images/image33.JPG" />
-       <p>caption here</p>
-        <img src="/Images/image22v2.JPG" />
-        <img src="/Images/2015%20Lexus%20RC%20350%20AWD%20%20F-Sport%20Package%20%20Lexus%20Sportiest%20Vehicle!!!%202.jpg" data-title:"car"/>
-
-    </div>
+<br />
+     
+    <div class="galleria">
+        <asp:Literal ID="litGallery" runat="server"></asp:Literal>
+</div>
     <script>
         (function () {
             Galleria.loadTheme('/galleria/themes/classic/galleria.classic.min.js');

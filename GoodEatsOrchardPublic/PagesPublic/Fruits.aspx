@@ -5,16 +5,16 @@
     <div style="max-width: 800px; margin: auto;">
     <div class="flex">
         <div>
-            <a href="/PagesPublic/Apples.aspx" class="fbox">Apples</a>
+            <a href="/PagesPublic/Applez.aspx" class="fbox">Apples</a>
         </div>
         <div>
-            <a href="/PagesPublic/Pears.aspx"class="fbox">Pears</a>
+            <a href="/PagesPublic/Pearz.aspx"class="fbox">Pears</a>
         </div>
         <div>
-            <a href="/PagesPublic/Plums.aspx"class="fbox">Plums</a>
+            <a href="/PagesPublic/Plumz.aspx"class="fbox">Plums</a>
         </div>
         <div>
-            <a href="" class="fbox">Other</a>
+            <a href="/PagesPublic/AsianPearz.aspx"class="fbox">Asian Pears</a>
         </div>
     </div></div>
 </asp:Content>

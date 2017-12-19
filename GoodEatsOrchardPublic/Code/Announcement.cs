@@ -51,6 +51,17 @@ namespace GoodEatsOrchardPublic.Code
             reader.Close();
             return announceObject;
         }
+
+        public static VisitCounter GetVisitCounter()
+        {
+
+            XmlSerializer machine = new XmlSerializer(typeof(VisitCounter));
+            TextReader reader = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("/App_Data/Visits.xml"));
+            object obj = machine.Deserialize(reader);
+            VisitCounter visitCounterObject = (VisitCounter)obj;
+            reader.Close();
+            return visitCounterObject;
+        }
     }
 }
 

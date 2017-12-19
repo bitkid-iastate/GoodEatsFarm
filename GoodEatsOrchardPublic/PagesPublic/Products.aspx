@@ -7,13 +7,13 @@
             <a href="/PagesPublic/Fruits.aspx" class="fbox">Fruits</a>
         </div>
         <div>
-            <a href="/PagesPublic/Vegetables.aspx"class="fbox">Vegtables</a>
+            <a href="/PagesPublic/Vegetablez.aspx"class="fbox">Vegtables</a>
         </div>
         <div>
-            <a href="/PagesPublic/Eggs.aspx"class="fbox">Eggs & Poultry</a>
+            <a href="/PagesPublic/Eggz.aspx"class="fbox">Eggs & Poultry</a>
         </div>
         <div>
-            <a href="/PagesPublic/Flowers.aspx" class="fbox">Flowers</a>
+            <a href="/PagesPublic/Flowerz.aspx" class="fbox">Flowers</a>
         </div>
     </div>
 </asp:Content>

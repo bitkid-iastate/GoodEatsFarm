@@ -135,8 +135,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Visits.xml" />
+    <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-02-988.jpg" />
+    <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-47-127.jpg" />
     <Content Include="Images\Rotator\image1.JPG" />
-    <Content Include="PagesPublic\Apples.aspx" />
+    <Content Include="PagesPublic\AsianPearz.aspx" />
+    <Content Include="PagesPublic\Eggz.aspx" />
+    <Content Include="PagesPublic\Flowerz.aspx" />
+    <Content Include="PagesPublic\Pearz.aspx" />
+    <Content Include="PagesPublic\Plumz.aspx" />
+    <Content Include="PagesPublic\Vegetablez.aspx" />
+    <Content Include="TrashBin\Apples.aspx" />
     <Content Include="App_Data\jumbotron.xml" />
     <Content Include="PagesAdmin\dash.aspx" />
     <Content Include="Images\appleTree.jpg" />
@@ -158,13 +167,13 @@
     <Content Include="Mapster\jquery.imagemapster.js" />
     <Content Include="Mapster\jquery.imagemapster.min.js" />
     <Content Include="PagesPublic\Applez.aspx" />
-    <Content Include="PagesPublic\Pears.aspx" />
-    <Content Include="PagesPublic\Plums.aspx" />
+    <Content Include="TrashBin\Pears.aspx" />
+    <Content Include="TrashBin\Plums.aspx" />
     <Content Include="PagesPublic\About.aspx" />
     <Content Include="PagesPublic\Calendar.aspx" />
     <Content Include="PagesPublic\Contact.aspx" />
-    <Content Include="PagesPublic\Eggs.aspx" />
-    <Content Include="PagesPublic\Flowers.aspx" />
+    <Content Include="TrashBin\Eggs.aspx" />
+    <Content Include="TrashBin\Flowers.aspx" />
     <Content Include="PagesPublic\Fruits.aspx" />
     <Content Include="galleria\galleria-1.5.7.js" />
     <Content Include="galleria\galleria-1.5.7.min.js" />
@@ -253,7 +262,7 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="GEO.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="PagesPublic\Home.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="PagesPublic\News.aspx" />
     <Content Include="PagesPublic\Pass.aspx" />
     <Content Include="PagesPublic\Products.aspx" />
@@ -285,7 +294,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="PagesPublic\Vegetables.aspx" />
+    <Content Include="TrashBin\Vegetables.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -293,11 +302,54 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PagesPublic\Apples.aspx.cs">
+    <Compile Include="Code\VisitCounter.cs" />
+    <Compile Include="PagesPublic\AsianPearz.aspx.cs">
+      <DependentUpon>AsianPearz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\AsianPearz.aspx.designer.cs">
+      <DependentUpon>AsianPearz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Eggz.aspx.cs">
+      <DependentUpon>Eggz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\Eggz.aspx.designer.cs">
+      <DependentUpon>Eggz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Flowerz.aspx.cs">
+      <DependentUpon>Flowerz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\Flowerz.aspx.designer.cs">
+      <DependentUpon>Flowerz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Pearz.aspx.cs">
+      <DependentUpon>Pearz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\Pearz.aspx.designer.cs">
+      <DependentUpon>Pearz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Plumz.aspx.cs">
+      <DependentUpon>Plumz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\Plumz.aspx.designer.cs">
+      <DependentUpon>Plumz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\Vegetablez.aspx.cs">
+      <DependentUpon>Vegetablez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\Vegetablez.aspx.designer.cs">
+      <DependentUpon>Vegetablez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrashBin\Apples.aspx.cs">
       <DependentUpon>Apples.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Apples.aspx.designer.cs">
+    <Compile Include="TrashBin\Apples.aspx.designer.cs">
       <DependentUpon>Apples.aspx</DependentUpon>
     </Compile>
     <Compile Include="Code\Announcement.cs" />
@@ -321,18 +373,18 @@
     <Compile Include="PagesPublic\Applez.aspx.designer.cs">
       <DependentUpon>Applez.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesPublic\Pears.aspx.cs">
+    <Compile Include="TrashBin\Pears.aspx.cs">
       <DependentUpon>Pears.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Pears.aspx.designer.cs">
+    <Compile Include="TrashBin\Pears.aspx.designer.cs">
       <DependentUpon>Pears.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesPublic\Plums.aspx.cs">
+    <Compile Include="TrashBin\Plums.aspx.cs">
       <DependentUpon>Plums.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Plums.aspx.designer.cs">
+    <Compile Include="TrashBin\Plums.aspx.designer.cs">
       <DependentUpon>Plums.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesPublic\About.aspx.cs">
@@ -358,18 +410,18 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="PagesPublic\Eggs.aspx.cs">
+    <Compile Include="TrashBin\Eggs.aspx.cs">
       <DependentUpon>Eggs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Eggs.aspx.designer.cs">
+    <Compile Include="TrashBin\Eggs.aspx.designer.cs">
       <DependentUpon>Eggs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesPublic\Flowers.aspx.cs">
+    <Compile Include="TrashBin\Flowers.aspx.cs">
       <DependentUpon>Flowers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Flowers.aspx.designer.cs">
+    <Compile Include="TrashBin\Flowers.aspx.designer.cs">
       <DependentUpon>Flowers.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesPublic\Fruits.aspx.cs">
@@ -389,11 +441,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="PagesPublic\Home.aspx.cs">
+    <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Home.aspx.designer.cs">
+    <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="GEO.Master.cs">
@@ -425,11 +477,11 @@
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PagesPublic\Vegetables.aspx.cs">
+    <Compile Include="TrashBin\Vegetables.aspx.cs">
       <DependentUpon>Vegetables.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesPublic\Vegetables.aspx.designer.cs">
+    <Compile Include="TrashBin\Vegetables.aspx.designer.cs">
       <DependentUpon>Vegetables.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -441,7 +493,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Gallery\" />
+    <Folder Include="Images\News\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

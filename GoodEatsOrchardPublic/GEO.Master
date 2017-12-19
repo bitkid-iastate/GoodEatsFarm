@@ -5,75 +5,81 @@
 <html>
 <head runat="server">
     <title>Good Eats Farm & Orchard</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Content/GEO.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form id="form1" runat="server">
+        <div class="none">
+            <ul id="nav-bar">
+                <li class="nav-item">
+                    <a href="/PagesPublic/News.aspx" class="nav-link">NEWS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/PagesPublic/About.aspx" class="nav-link">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/PagesPublic/Products.aspx" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="/PagesPublic/Vegetablez.aspx">Vegtables</a></li>
+                            <li><a href="/PagesPublic/Fruits.aspx">Fruits</a></li>
+                            <li><a href="/PagesPublic/Eggz.aspx">Poultry & Eggs</a></li>
+                            <li><a href="/PagesPublic/Flowerz.aspx">Flowers</a></li>
+                        </ul>
 
-    <form id="form1" runat="server">    
-        <div>
-    <ul id="nav-bar">
-        <li class="nav-item">
-            <a href="/PagesPublic/News.aspx" class="nav-link">NEWS</a>
-        </li>
-        <li class="nav-item">
-            <a href="/PagesPublic/About.aspx" class="nav-link">ABOUT US</a>
-        </li>
-        <li class="nav-item">
-            <a href="/PagesPublic/Products.aspx" class="nav-link">PRODUCTS</a>
-            <div class="dropdown-menu">
-                <ul>
-                    <li><a href="/PagesPublic/Vegetables.aspx">Vegtables</a></li>
-                    <li><a href="/PagesPublic/Fruits.aspx">Fruits</a></li>
-                    <li><a href="/PagesPublic/Eggs.aspx">Poultry & Eggs</a></li>
-                    <li><a href="/PagesPublic/Flowers.aspx">Flowers</a></li>
-                </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/PagesPublic/Contact.aspx" class="nav-link">CONTACT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/PagesPublic/Calendar.aspx" class="nav-link">CALENDAR and EVENTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/PagesPublic/Gallery.aspx" class="nav-link">GALLERY</a>
+                </li>
 
-            </div>
-        </li>
-        <li class="nav-item">
-            <a href="/PagesPublic/Contact.aspx" class="nav-link">CONTACT US</a>
-        </li>
-        <li class="nav-item">
-            <a href="/PagesPublic/Calendar.aspx" class="nav-link">CALENDAR and EVENTS</a>
-        </li>
-        <li class="nav-item">
-            <a href="/PagesPublic/Gallery.aspx" class="nav-link">GALLERY</a>
-        </li>
-      
-<asp:PlaceHolder ID="loggedInBanner" runat="server" Visible="False">
-        <li>You are logged in.</li>
-    <li><a href="/PagesAdmin/dash.aspx">dashboard</a>
-            <asp:Button ID="btnLogOut" runat="server" Text="Logout" OnClick="btnLogOut_Click" /></li>
-            
-        
-    </asp:PlaceHolder>
-        
-    </ul>
+                <asp:PlaceHolder ID="loggedInBanner" runat="server" Visible="False">
+                    
+                    <li class="nav-item">You are logged in.</li>
+                    <li class="nav-item"><a class="nav-link" href="/PagesAdmin/dash.aspx">dashboard</a><asp:Button ID="btnLogOut" runat="server" Text="Logout" OnClick="btnLogOut_Click" /></li>
 
-    <span id="title-banner"><a href="/PagesPublic/Home.aspx">
-        <img src="/Images/GEFlogowhitev4.png" /></a></span>
+                </asp:PlaceHolder>
 
-    <span id="address-bar">16967 118th Ave. Indianola, Iowa 50125 &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </ul>
+
+            <span id="title-banner"><a href="/Home.aspx">
+                <img src="/Images/GEFlogowhitev4.png" /></a></span>
+
+            <span id="address-bar">16967 118th Ave. Indianola, Iowa 50125 &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp (515) 491-0269</span>
-    <br />
-    <br />
+            <br />
+            <br />
+            
+                <asp:TextBox ID="txtAnnounce" Visible="false" runat="server" CssClass="announce" TextMode="MultiLine"></asp:TextBox>
+            
+            <br />
+            <br />
 
 
 
 
 
-
+<div class="innerBody">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
-    
-    <br />
-    <br />
-    <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a href="/PagesPublic/Pass.aspx">Login</a></footer>
+       </div> </div>
+        
+        <br />
+        <br />
+        <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a href="/PagesPublic/Pass.aspx">Login</a></footer>
 
     </form>
+        
 </body>
 </html>

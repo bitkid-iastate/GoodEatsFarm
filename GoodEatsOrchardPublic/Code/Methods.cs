@@ -5,7 +5,7 @@ using System.Web;
 using System.Xml;
 using System.Web.UI.WebControls;
 using System.IO;
-
+using System.Data;
 
 namespace GoodEatsOrchardPublic.Code
 
@@ -54,8 +54,26 @@ namespace GoodEatsOrchardPublic.Code
                 return false;
             }
         }
-       
-     
+
+        public static DataSet GetImages(string folder)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            string[] files = Directory.GetFiles(folder);
+            dt.Columns.Add("FileName", typeof(System.String));
+            dt.Columns.Add("FilePath", typeof(System.String));
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                dt.Rows.Add(new object[] { fileName, file });
+               
+
+            }
+            ds.Tables.Add(dt);
+            return ds;
+
+        }
 
     }
 }

@@ -18,12 +18,12 @@
         }
     </script>
 
-    </script>
+    
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-    <br />
+    
+    
     <!-- <div>
     <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" BorderColor="Black" Height="300px" Width="300px">
         <asp:TableRow runat="server" VerticalAlign="Middle">
@@ -37,16 +37,18 @@ Indianola, Iowa 50125</p></asp:TableCell>
         </asp:TableRow>
     </asp:Table>
 </div> -->
+    <br />
+
     <div class="center">
         <asp:Label ID="DisplayMessage" runat="server" Visible="false" ForeColor="#CC0000" Font-Size="X-Large" />
         <b id="DisplayMessage2"></b>
         <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSubmit">
             <p>
             </p>
-            <p>
-                Please Fill the Following to Send Mail.
-            </p>
-            <p>
+            <p class="content-words">
+                Please Fill the Following to send us a message.
+                <br />
+            <br />
                 Your name:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="*"
             ControlToValidate="YourName" ValidationGroup="save" /><br />
@@ -68,16 +70,21 @@ Indianola, Iowa 50125</p></asp:TableCell>
             ControlToValidate="Comments" ValidationGroup="save" /><br />
                 <asp:TextBox ID="Comments" runat="server"
                     TextMode="MultiLine" Rows="10" Width="400px" />
-            </p>
+            
             <BotDetect:WebFormsCaptcha ID="ExampleCaptcha" runat="server" />
-            <asp:TextBox ID="CaptchaCode" runat="server" />
-            <asp:Label ID="CaptchaErrorLabel" runat="server" />
-            <p>
-                <asp:Button ID="btnSubmit" runat="server" Text="Send"
-                    OnClick="Button1_Click" ValidationGroup="save" />
+                <p>
+                    <asp:TextBox ID="CaptchaCode" runat="server" />
+                    <asp:Label ID="CaptchaErrorLabel" runat="server" />
+                    <br />
+                    <br />
+                    <asp:Button ID="btnSubmit" runat="server" Height="30px" OnClick="Button1_Click" Text="Send" ValidationGroup="save" Width="80px" />
+                </p>
+
             </p>
+            
         </asp:Panel>
 
-
     </div>
+    <br />
+    
 </asp:Content>

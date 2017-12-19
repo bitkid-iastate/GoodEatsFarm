@@ -3,7 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Table ID="Table1" runat="server"></asp:Table>
-    <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True" Font-Size="XX-Large" ForeColor="#990000"></asp:Label>
-</asp:Content>
+    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" Width="900"></asp:Table>
+    </asp:Content>
 

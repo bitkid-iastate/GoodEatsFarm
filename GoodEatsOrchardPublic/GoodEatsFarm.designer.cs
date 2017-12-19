@@ -30,12 +30,18 @@ namespace GoodEatsOrchardPublic
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
+    partial void InsertNew(New instance);
+    partial void UpdateNew(New instance);
+    partial void DeleteNew(New instance);
+    partial void InsertNewsImg(NewsImg instance);
+    partial void UpdateNewsImg(NewsImg instance);
+    partial void DeleteNewsImg(NewsImg instance);
     #endregion
 		
 		public GoodEatsFarmDataContext() : 
@@ -68,14 +74,6 @@ namespace GoodEatsOrchardPublic
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Product> Products
-		{
-			get
-			{
-				return this.GetTable<Product>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Category> Categories
 		{
 			get
@@ -84,10 +82,55 @@ namespace GoodEatsOrchardPublic
 			}
 		}
 		
+		public System.Data.Linq.Table<Product> Products
+		{
+			get
+			{
+				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<New> News
+		{
+			get
+			{
+				return this.GetTable<New>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NewsImg> NewsImgs
+		{
+			get
+			{
+				return this.GetTable<NewsImg>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspProductInsert")]
-		public int uspProductInsert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceInfo", DbType="NVarChar(50)")] string priceInfo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Description", DbType="NVarChar(MAX)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryID", DbType="NVarChar(50)")] string categoryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImagePath", DbType="NVarChar(50)")] string imagePath)
+		public int uspProductInsert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceInfo", DbType="NVarChar(50)")] string priceInfo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Description", DbType="NVarChar(MAX)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryID", DbType="NVarChar(50)")] string categoryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImagePath", DbType="NVarChar(MAX)")] string imagePath)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, priceInfo, description, categoryID, imagePath);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspProductsDropSingle")]
+		public int uspProductsDropSingle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="NVarChar(50)")] string productID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspProductsGetSingle")]
+		public ISingleResult<uspProductsGetSingleResult> uspProductsGetSingle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="NVarChar(50)")] string productID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID);
+			return ((ISingleResult<uspProductsGetSingleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspProductUpdate")]
+		public int uspProductUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="NVarChar(50)")] string productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceInfo", DbType="NVarChar(50)")] string priceInfo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Description", DbType="NVarChar(MAX)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImagePath", DbType="NVarChar(MAX)")] string imagePath, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OrderIndex", DbType="Int")] System.Nullable<int> orderIndex)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, name, priceInfo, description, imagePath, orderIndex);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -96,6 +139,213 @@ namespace GoodEatsOrchardPublic
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoryID);
 			return ((ISingleResult<uspProductsGetbyCatResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categories")]
+	public partial class Category : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _CategoryID;
+		
+		private string _Name;
+		
+		private System.Nullable<System.Guid> _SuperCategoryID;
+		
+		private EntitySet<Category> _Categories;
+		
+		private EntitySet<Product> _Products;
+		
+		private EntityRef<Category> _Category1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCategoryIDChanging(System.Guid value);
+    partial void OnCategoryIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSuperCategoryIDChanging(System.Nullable<System.Guid> value);
+    partial void OnSuperCategoryIDChanged();
+    #endregion
+		
+		public Category()
+		{
+			this._Categories = new EntitySet<Category>(new Action<Category>(this.attach_Categories), new Action<Category>(this.detach_Categories));
+			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
+			this._Category1 = default(EntityRef<Category>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					this.OnCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryID = value;
+					this.SendPropertyChanged("CategoryID");
+					this.OnCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SuperCategoryID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> SuperCategoryID
+		{
+			get
+			{
+				return this._SuperCategoryID;
+			}
+			set
+			{
+				if ((this._SuperCategoryID != value))
+				{
+					if (this._Category1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSuperCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._SuperCategoryID = value;
+					this.SendPropertyChanged("SuperCategoryID");
+					this.OnSuperCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Category", Storage="_Categories", ThisKey="CategoryID", OtherKey="SuperCategoryID")]
+		public EntitySet<Category> Categories
+		{
+			get
+			{
+				return this._Categories;
+			}
+			set
+			{
+				this._Categories.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Product", Storage="_Products", ThisKey="CategoryID", OtherKey="CategoryID")]
+		public EntitySet<Product> Products
+		{
+			get
+			{
+				return this._Products;
+			}
+			set
+			{
+				this._Products.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Category", Storage="_Category1", ThisKey="SuperCategoryID", OtherKey="CategoryID", IsForeignKey=true)]
+		public Category Category1
+		{
+			get
+			{
+				return this._Category1.Entity;
+			}
+			set
+			{
+				Category previousValue = this._Category1.Entity;
+				if (((previousValue != value) 
+							|| (this._Category1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Category1.Entity = null;
+						previousValue.Categories.Remove(this);
+					}
+					this._Category1.Entity = value;
+					if ((value != null))
+					{
+						value.Categories.Add(this);
+						this._SuperCategoryID = value.CategoryID;
+					}
+					else
+					{
+						this._SuperCategoryID = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("Category1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Categories(Category entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category1 = this;
+		}
+		
+		private void detach_Categories(Category entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category1 = null;
+		}
+		
+		private void attach_Products(Product entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = this;
+		}
+		
+		private void detach_Products(Product entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = null;
 		}
 	}
 	
@@ -117,6 +367,8 @@ namespace GoodEatsOrchardPublic
 		
 		private string _ImagePath;
 		
+		private int _OrderIndex;
+		
 		private EntityRef<Category> _Category;
 		
     #region Extensibility Method Definitions
@@ -135,6 +387,8 @@ namespace GoodEatsOrchardPublic
     partial void OnCategoryIDChanged();
     partial void OnImagePathChanging(string value);
     partial void OnImagePathChanged();
+    partial void OnOrderIndexChanging(int value);
+    partial void OnOrderIndexChanged();
     #endregion
 		
 		public Product()
@@ -247,7 +501,7 @@ namespace GoodEatsOrchardPublic
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(MAX)")]
 		public string ImagePath
 		{
 			get
@@ -263,6 +517,26 @@ namespace GoodEatsOrchardPublic
 					this._ImagePath = value;
 					this.SendPropertyChanged("ImagePath");
 					this.OnImagePathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderIndex", DbType="Int NOT NULL")]
+		public int OrderIndex
+		{
+			get
+			{
+				return this._OrderIndex;
+			}
+			set
+			{
+				if ((this._OrderIndex != value))
+				{
+					this.OnOrderIndexChanging(value);
+					this.SendPropertyChanging();
+					this._OrderIndex = value;
+					this.SendPropertyChanged("OrderIndex");
+					this.OnOrderIndexChanged();
 				}
 			}
 		}
@@ -322,165 +596,108 @@ namespace GoodEatsOrchardPublic
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categories")]
-	public partial class Category : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.News")]
+	public partial class New : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Guid _CategoryID;
+		private System.Guid _NewsID;
 		
-		private string _Name;
+		private string _NewsContent;
 		
-		private System.Nullable<System.Guid> _SuperCategoryID;
+		private System.DateTime _NewsDate;
 		
-		private EntitySet<Product> _Products;
-		
-		private EntitySet<Category> _Categories;
-		
-		private EntityRef<Category> _Category1;
+		private EntitySet<NewsImg> _NewsImgs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCategoryIDChanging(System.Guid value);
-    partial void OnCategoryIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnSuperCategoryIDChanging(System.Nullable<System.Guid> value);
-    partial void OnSuperCategoryIDChanged();
+    partial void OnNewsIDChanging(System.Guid value);
+    partial void OnNewsIDChanged();
+    partial void OnNewsContentChanging(string value);
+    partial void OnNewsContentChanged();
+    partial void OnNewsDateChanging(System.DateTime value);
+    partial void OnNewsDateChanged();
     #endregion
 		
-		public Category()
+		public New()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
-			this._Categories = new EntitySet<Category>(new Action<Category>(this.attach_Categories), new Action<Category>(this.detach_Categories));
-			this._Category1 = default(EntityRef<Category>);
+			this._NewsImgs = new EntitySet<NewsImg>(new Action<NewsImg>(this.attach_NewsImgs), new Action<NewsImg>(this.detach_NewsImgs));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
-		public System.Guid CategoryID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid NewsID
 		{
 			get
 			{
-				return this._CategoryID;
+				return this._NewsID;
 			}
 			set
 			{
-				if ((this._CategoryID != value))
+				if ((this._NewsID != value))
 				{
-					this.OnCategoryIDChanging(value);
+					this.OnNewsIDChanging(value);
 					this.SendPropertyChanging();
-					this._CategoryID = value;
-					this.SendPropertyChanged("CategoryID");
-					this.OnCategoryIDChanged();
+					this._NewsID = value;
+					this.SendPropertyChanged("NewsID");
+					this.OnNewsIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsContent", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NewsContent
 		{
 			get
 			{
-				return this._Name;
+				return this._NewsContent;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._NewsContent != value))
 				{
-					this.OnNameChanging(value);
+					this.OnNewsContentChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+					this._NewsContent = value;
+					this.SendPropertyChanged("NewsContent");
+					this.OnNewsContentChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SuperCategoryID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> SuperCategoryID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsDate", DbType="DateTime NOT NULL")]
+		public System.DateTime NewsDate
 		{
 			get
 			{
-				return this._SuperCategoryID;
+				return this._NewsDate;
 			}
 			set
 			{
-				if ((this._SuperCategoryID != value))
+				if ((this._NewsDate != value))
 				{
-					if (this._Category1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSuperCategoryIDChanging(value);
+					this.OnNewsDateChanging(value);
 					this.SendPropertyChanging();
-					this._SuperCategoryID = value;
-					this.SendPropertyChanged("SuperCategoryID");
-					this.OnSuperCategoryIDChanged();
+					this._NewsDate = value;
+					this.SendPropertyChanged("NewsDate");
+					this.OnNewsDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Product", Storage="_Products", ThisKey="CategoryID", OtherKey="CategoryID")]
-		public EntitySet<Product> Products
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="New_NewsImg", Storage="_NewsImgs", ThisKey="NewsID", OtherKey="NewsID")]
+		public EntitySet<NewsImg> NewsImgs
 		{
 			get
 			{
-				return this._Products;
+				return this._NewsImgs;
 			}
 			set
 			{
-				this._Products.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Category", Storage="_Categories", ThisKey="CategoryID", OtherKey="SuperCategoryID")]
-		public EntitySet<Category> Categories
-		{
-			get
-			{
-				return this._Categories;
-			}
-			set
-			{
-				this._Categories.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Category", Storage="_Category1", ThisKey="SuperCategoryID", OtherKey="CategoryID", IsForeignKey=true)]
-		public Category Category1
-		{
-			get
-			{
-				return this._Category1.Entity;
-			}
-			set
-			{
-				Category previousValue = this._Category1.Entity;
-				if (((previousValue != value) 
-							|| (this._Category1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Category1.Entity = null;
-						previousValue.Categories.Remove(this);
-					}
-					this._Category1.Entity = value;
-					if ((value != null))
-					{
-						value.Categories.Add(this);
-						this._SuperCategoryID = value.CategoryID;
-					}
-					else
-					{
-						this._SuperCategoryID = default(Nullable<System.Guid>);
-					}
-					this.SendPropertyChanged("Category1");
-				}
+				this._NewsImgs.Assign(value);
 			}
 		}
 		
@@ -504,28 +721,301 @@ namespace GoodEatsOrchardPublic
 			}
 		}
 		
-		private void attach_Products(Product entity)
+		private void attach_NewsImgs(NewsImg entity)
 		{
 			this.SendPropertyChanging();
-			entity.Category = this;
+			entity.New = this;
 		}
 		
-		private void detach_Products(Product entity)
+		private void detach_NewsImgs(NewsImg entity)
 		{
 			this.SendPropertyChanging();
-			entity.Category = null;
+			entity.New = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NewsImgs")]
+	public partial class NewsImg : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _NewsImgID;
+		
+		private string _Path;
+		
+		private System.Guid _NewsID;
+		
+		private EntityRef<New> _New;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNewsImgIDChanging(System.Guid value);
+    partial void OnNewsImgIDChanged();
+    partial void OnPathChanging(string value);
+    partial void OnPathChanged();
+    partial void OnNewsIDChanging(System.Guid value);
+    partial void OnNewsIDChanged();
+    #endregion
+		
+		public NewsImg()
+		{
+			this._New = default(EntityRef<New>);
+			OnCreated();
 		}
 		
-		private void attach_Categories(Category entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsImgID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid NewsImgID
 		{
-			this.SendPropertyChanging();
-			entity.Category1 = this;
+			get
+			{
+				return this._NewsImgID;
+			}
+			set
+			{
+				if ((this._NewsImgID != value))
+				{
+					this.OnNewsImgIDChanging(value);
+					this.SendPropertyChanging();
+					this._NewsImgID = value;
+					this.SendPropertyChanged("NewsImgID");
+					this.OnNewsImgIDChanged();
+				}
+			}
 		}
 		
-		private void detach_Categories(Category entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Path", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Path
 		{
-			this.SendPropertyChanging();
-			entity.Category1 = null;
+			get
+			{
+				return this._Path;
+			}
+			set
+			{
+				if ((this._Path != value))
+				{
+					this.OnPathChanging(value);
+					this.SendPropertyChanging();
+					this._Path = value;
+					this.SendPropertyChanged("Path");
+					this.OnPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsID
+		{
+			get
+			{
+				return this._NewsID;
+			}
+			set
+			{
+				if ((this._NewsID != value))
+				{
+					if (this._New.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnNewsIDChanging(value);
+					this.SendPropertyChanging();
+					this._NewsID = value;
+					this.SendPropertyChanged("NewsID");
+					this.OnNewsIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="New_NewsImg", Storage="_New", ThisKey="NewsID", OtherKey="NewsID", IsForeignKey=true)]
+		public New New
+		{
+			get
+			{
+				return this._New.Entity;
+			}
+			set
+			{
+				New previousValue = this._New.Entity;
+				if (((previousValue != value) 
+							|| (this._New.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._New.Entity = null;
+						previousValue.NewsImgs.Remove(this);
+					}
+					this._New.Entity = value;
+					if ((value != null))
+					{
+						value.NewsImgs.Add(this);
+						this._NewsID = value.NewsID;
+					}
+					else
+					{
+						this._NewsID = default(System.Guid);
+					}
+					this.SendPropertyChanged("New");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class uspProductsGetSingleResult
+	{
+		
+		private System.Guid _ProductID;
+		
+		private string _Name;
+		
+		private string _PriceInfo;
+		
+		private string _Description;
+		
+		private System.Guid _CategoryID;
+		
+		private string _ImagePath;
+		
+		private int _OrderIndex;
+		
+		public uspProductsGetSingleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this._ProductID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceInfo", DbType="NVarChar(50)")]
+		public string PriceInfo
+		{
+			get
+			{
+				return this._PriceInfo;
+			}
+			set
+			{
+				if ((this._PriceInfo != value))
+				{
+					this._PriceInfo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					this._CategoryID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(MAX)")]
+		public string ImagePath
+		{
+			get
+			{
+				return this._ImagePath;
+			}
+			set
+			{
+				if ((this._ImagePath != value))
+				{
+					this._ImagePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderIndex", DbType="Int NOT NULL")]
+		public int OrderIndex
+		{
+			get
+			{
+				return this._OrderIndex;
+			}
+			set
+			{
+				if ((this._OrderIndex != value))
+				{
+					this._OrderIndex = value;
+				}
+			}
 		}
 	}
 	
@@ -543,6 +1033,8 @@ namespace GoodEatsOrchardPublic
 		private System.Guid _CategoryID;
 		
 		private string _ImagePath;
+		
+		private int _OrderIndex;
 		
 		public uspProductsGetbyCatResult()
 		{
@@ -628,7 +1120,7 @@ namespace GoodEatsOrchardPublic
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(MAX)")]
 		public string ImagePath
 		{
 			get
@@ -640,6 +1132,22 @@ namespace GoodEatsOrchardPublic
 				if ((this._ImagePath != value))
 				{
 					this._ImagePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderIndex", DbType="Int NOT NULL")]
+		public int OrderIndex
+		{
+			get
+			{
+				return this._OrderIndex;
+			}
+			set
+			{
+				if ((this._OrderIndex != value))
+				{
+					this._OrderIndex = value;
 				}
 			}
 		}
