@@ -136,9 +136,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Visits.xml" />
+    <Content Include="Images\DeerAndFarm.JPG" />
     <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-02-988.jpg" />
     <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-47-127.jpg" />
+    <Content Include="Images\GEFlogowhitev5.png" />
+    <Content Include="Images\IMG_1027.jpg" />
     <Content Include="Images\Rotator\image1.JPG" />
+    <Content Include="Images\Wildflower.JPG" />
     <Content Include="PagesPublic\AsianPearz.aspx" />
     <Content Include="PagesPublic\Eggz.aspx" />
     <Content Include="PagesPublic\Flowerz.aspx" />
@@ -302,6 +306,7 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Article.cs" />
     <Compile Include="Code\VisitCounter.cs" />
     <Compile Include="PagesPublic\AsianPearz.aspx.cs">
       <DependentUpon>AsianPearz.aspx</DependentUpon>
@@ -493,6 +498,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\Backgrounds\" />
     <Folder Include="Images\News\" />
   </ItemGroup>
   <ItemGroup>

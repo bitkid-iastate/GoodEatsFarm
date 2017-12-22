@@ -35,7 +35,7 @@
         </asp:TableRow>
     </asp:Table>
     <br />
-  
+
     <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -49,6 +49,7 @@
     </ol>
 
     <!-- Wrapper for slides -->    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+       
     <div class="carousel-inner">
       <div class="item active">
         <img src="/Images/Rotator/image1.JPG" alt="Los Angeles" style="width:100%;">
@@ -87,22 +88,21 @@
   </div>
 </div>
 
-
-
     <br />
-    <br />
+  <br />
     <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" Width="900px">
         <asp:TableRow>
             <asp:TableCell runat="server"></asp:TableCell>
-            <asp:TableCell><div class="content-words">&nbsp  &nbsp &nbsp<b class="big">&ldquo;</b><br />
-            &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp Established in 2013, Good Eats Farm and Orchard is 
-            <b>modest</b> and <b>family-operated</b>; nearly entirely maintained 
-            by it's owners. And it's located in <b>walking distance from Lake Aqhuabi</b>! 
-            Known for it's variety of <b>farm-fresh</b> fruits and vegetables, along with eggs from both free-range chickens and ducks, only lucky denizens of
-            the Des Moines area (and visitors, of course)
-            have been able to get a hold of their declicious products. Good Eats Farm and Orchard sells at local <b>farmer's markets</b>, and directly, by contacting one of the owners. 
-            Check back here at this website, under the "News" or "Calender" pages, to find out which farmer's market they will be at next, and when! Or if you have an urgent need to satisfy your fresh
-            food fix, just give them a call! &nbsp  &nbsp <br />
+            <asp:TableCell><div class="content-words">
+                <%--&nbsp  &nbsp &nbsp<b class="big">&ldquo;</b><br />--%>&nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp 
+                Established in 2013, Good Eats Farm and Orchard is modest and family-operated. The farm is nearly entirely maintained by it's owners, and it's located in walking distance from Lake Aqhuabi! 
+            Known for it's variety of farm-fresh fruits and vegetables, along with eggs from both free-range chickens and ducks, only lucky denizens of the Des Moines area (and visitors, of course)
+            have been able to get a hold of their declicious products. 
+                <br />
+                &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbspGood Eats Farm and Orchard sells at local farmer's markets, and directly, by contacting one of the owners. 
+            Check back here at this website, under the "News" or "Calendar" pages, to find out which farmer's market they will be at next, and when! Or if you have an urgent need to satisfy your fresh
+            food fix, just give them a call! &nbsp  &nbsp <br /><br />
+          <%--  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -110,9 +110,8 @@
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b class="big">&rdquo;</b></div> 
-          
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b class="big">&rdquo;</b> --%>
+          </div>
             </asp:TableCell>
 
             <asp:TableCell runat="server"></asp:TableCell>

@@ -140,6 +140,69 @@ namespace GoodEatsOrchardPublic
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoryID);
 			return ((ISingleResult<uspProductsGetbyCatResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsAndPicsDelete")]
+		public int uspNewsAndPicsDelete([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsID", DbType="NVarChar(50)")] string newsID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsGetByYear")]
+		public ISingleResult<uspNewsGetByYearResult> uspNewsGetByYear([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Year", DbType="NVarChar(4)")] string year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year);
+			return ((ISingleResult<uspNewsGetByYearResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsGetSingle")]
+		public ISingleResult<uspNewsGetSingleResult> uspNewsGetSingle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsID", DbType="NVarChar(50)")] string newsID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsID);
+			return ((ISingleResult<uspNewsGetSingleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsGetTopSeven")]
+		public ISingleResult<uspNewsGetTopSevenResult> uspNewsGetTopSeven()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<uspNewsGetTopSevenResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsPicAdd")]
+		public int uspNewsPicAdd([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsID", DbType="NVarChar(50)")] string newsID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Path", DbType="NVarChar(MAX)")] string path)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsID, path);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsPicDelete")]
+		public int uspNewsPicDelete([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsImgID", DbType="NVarChar(50)")] string newsImgID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsImgID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsPicsGetByArticle")]
+		public ISingleResult<uspNewsPicsGetByArticleResult> uspNewsPicsGetByArticle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsID", DbType="NVarChar(50)")] string newsID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsID);
+			return ((ISingleResult<uspNewsPicsGetByArticleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsUpdate")]
+		public int uspNewsUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsID", DbType="NVarChar(50)")] string newsID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsContent", DbType="NVarChar(MAX)")] string newsContent, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsDate", DbType="DateTime")] System.Nullable<System.DateTime> newsDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsID, newsContent, newsDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspNewsInsert")]
+		public ISingleResult<uspNewsInsertResult> uspNewsInsert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsContent", DbType="NVarChar(MAX)")] string newsContent, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewsDate", DbType="DateTime")] System.Nullable<System.DateTime> newsDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newsContent, newsDate);
+			return ((ISingleResult<uspNewsInsertResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categories")]
@@ -1148,6 +1211,280 @@ namespace GoodEatsOrchardPublic
 				if ((this._OrderIndex != value))
 				{
 					this._OrderIndex = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspNewsGetByYearResult
+	{
+		
+		private System.Guid _NewsID;
+		
+		private string _NewsContent;
+		
+		private System.DateTime _NewsDate;
+		
+		public uspNewsGetByYearResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsID
+		{
+			get
+			{
+				return this._NewsID;
+			}
+			set
+			{
+				if ((this._NewsID != value))
+				{
+					this._NewsID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsContent", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NewsContent
+		{
+			get
+			{
+				return this._NewsContent;
+			}
+			set
+			{
+				if ((this._NewsContent != value))
+				{
+					this._NewsContent = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsDate", DbType="DateTime NOT NULL")]
+		public System.DateTime NewsDate
+		{
+			get
+			{
+				return this._NewsDate;
+			}
+			set
+			{
+				if ((this._NewsDate != value))
+				{
+					this._NewsDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspNewsGetSingleResult
+	{
+		
+		private System.Guid _NewsID;
+		
+		private string _NewsContent;
+		
+		private System.DateTime _NewsDate;
+		
+		public uspNewsGetSingleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsID
+		{
+			get
+			{
+				return this._NewsID;
+			}
+			set
+			{
+				if ((this._NewsID != value))
+				{
+					this._NewsID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsContent", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NewsContent
+		{
+			get
+			{
+				return this._NewsContent;
+			}
+			set
+			{
+				if ((this._NewsContent != value))
+				{
+					this._NewsContent = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsDate", DbType="DateTime NOT NULL")]
+		public System.DateTime NewsDate
+		{
+			get
+			{
+				return this._NewsDate;
+			}
+			set
+			{
+				if ((this._NewsDate != value))
+				{
+					this._NewsDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspNewsGetTopSevenResult
+	{
+		
+		private System.Guid _NewsID;
+		
+		private string _NewsContent;
+		
+		private System.DateTime _NewsDate;
+		
+		public uspNewsGetTopSevenResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsID
+		{
+			get
+			{
+				return this._NewsID;
+			}
+			set
+			{
+				if ((this._NewsID != value))
+				{
+					this._NewsID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsContent", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NewsContent
+		{
+			get
+			{
+				return this._NewsContent;
+			}
+			set
+			{
+				if ((this._NewsContent != value))
+				{
+					this._NewsContent = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsDate", DbType="DateTime NOT NULL")]
+		public System.DateTime NewsDate
+		{
+			get
+			{
+				return this._NewsDate;
+			}
+			set
+			{
+				if ((this._NewsDate != value))
+				{
+					this._NewsDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspNewsPicsGetByArticleResult
+	{
+		
+		private System.Guid _NewsImgID;
+		
+		private string _Path;
+		
+		private System.Guid _NewsID;
+		
+		public uspNewsPicsGetByArticleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsImgID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsImgID
+		{
+			get
+			{
+				return this._NewsImgID;
+			}
+			set
+			{
+				if ((this._NewsImgID != value))
+				{
+					this._NewsImgID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Path", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Path
+		{
+			get
+			{
+				return this._Path;
+			}
+			set
+			{
+				if ((this._Path != value))
+				{
+					this._Path = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsID
+		{
+			get
+			{
+				return this._NewsID;
+			}
+			set
+			{
+				if ((this._NewsID != value))
+				{
+					this._NewsID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspNewsInsertResult
+	{
+		
+		private System.Guid _NewsID;
+		
+		public uspNewsInsertResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid NewsID
+		{
+			get
+			{
+				return this._NewsID;
+			}
+			set
+			{
+				if ((this._NewsID != value))
+				{
+					this._NewsID = value;
 				}
 			}
 		}

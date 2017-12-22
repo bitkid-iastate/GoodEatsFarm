@@ -83,4 +83,61 @@
       <Column Name="OrderIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.uspNewsAndPicsDelete" Method="uspNewsAndPicsDelete">
+    <Parameter Name="NewsID" Parameter="newsID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspNewsGetByYear" Method="uspNewsGetByYear">
+    <Parameter Name="Year" Parameter="year" Type="System.String" DbType="NVarChar(4)" />
+    <ElementType Name="uspNewsGetByYearResult">
+      <Column Name="NewsID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NewsContent" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspNewsGetSingle" Method="uspNewsGetSingle">
+    <Parameter Name="NewsID" Parameter="newsID" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="uspNewsGetSingleResult">
+      <Column Name="NewsID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NewsContent" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspNewsGetTopSeven" Method="uspNewsGetTopSeven">
+    <ElementType Name="uspNewsGetTopSevenResult">
+      <Column Name="NewsID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NewsContent" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspNewsPicAdd" Method="uspNewsPicAdd">
+    <Parameter Name="NewsID" Parameter="newsID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Path" Parameter="path" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspNewsPicDelete" Method="uspNewsPicDelete">
+    <Parameter Name="NewsImgID" Parameter="newsImgID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspNewsPicsGetByArticle" Method="uspNewsPicsGetByArticle">
+    <Parameter Name="NewsID" Parameter="newsID" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="uspNewsPicsGetByArticleResult">
+      <Column Name="NewsImgID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspNewsUpdate" Method="uspNewsUpdate">
+    <Parameter Name="NewsID" Parameter="newsID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NewsContent" Parameter="newsContent" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NewsDate" Parameter="newsDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspNewsInsert" Method="uspNewsInsert">
+    <Parameter Name="NewsContent" Parameter="newsContent" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NewsDate" Parameter="newsDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="uspNewsInsertResult">
+      <Column Name="NewsID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

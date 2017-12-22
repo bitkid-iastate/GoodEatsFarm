@@ -481,6 +481,15 @@ namespace GoodEatsOrchardPublic {
         protected global::System.Web.UI.WebControls.Panel plGalleryImageSucc;
         
         /// <summary>
+        /// btnAnotherGalleryImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAnotherGalleryImg;
+        
+        /// <summary>
         /// gvGallery control.
         /// </summary>
         /// <remarks>
@@ -499,6 +508,15 @@ namespace GoodEatsOrchardPublic {
         protected global::System.Web.UI.WebControls.View View4;
         
         /// <summary>
+        /// btnArticleAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnArticleAdd;
+        
+        /// <summary>
         /// plJournal control.
         /// </summary>
         /// <remarks>
@@ -506,5 +524,68 @@ namespace GoodEatsOrchardPublic {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel plJournal;
+        
+        /// <summary>
+        /// flNewsSample control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile flNewsSample;
+        
+        /// <summary>
+        /// btnLoadNewsPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLoadNewsPic;
+        
+        /// <summary>
+        /// imgNewsSample control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgNewsSample;
+        
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        
+        /// <summary>
+        /// dlArtPicsPreview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dlArtPicsPreview;
+        
+        /// <summary>
+        /// txtArtContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtContent;
+        
+        /// <summary>
+        /// btnSbtNewArticle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSbtNewArticle;
     }
 }

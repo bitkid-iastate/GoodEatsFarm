@@ -43,7 +43,7 @@ namespace GoodEatsOrchardPublic
 
                     if (ann.announce != "" && ann.announce != null)
                     {
-                        txtJumbo.Text = ann.announce;
+                        txtJumbo.Text = ann.announce.Replace("<br />", "\r\n");
                         txtJumbo.Visible = false;
                     }
 
@@ -102,7 +102,7 @@ namespace GoodEatsOrchardPublic
         {
             if (Methods.isLoggedIn())
             {
-                string x = txtJumbo.Text;
+                string x = txtJumbo.Text.Replace(Environment.NewLine, "<br />");
                 ann.announce = x;
                 ann.serialize();
                 Page.Response.Redirect(Page.Request.Url.ToString(), true);
@@ -479,17 +479,27 @@ namespace GoodEatsOrchardPublic
             DataSet imgs = Methods.GetImages(Server.MapPath("~/Images/Gallery"));
             gvGallery.DataSource = imgs;
             gvGallery.DataBind();
+            plGalleryImageSucc.Visible = false;
+            plNewGalleryImage.Visible = true;
 
         }
 
         protected void btnView4_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 3;
+            plJournal.Visible = false;
+            Calendar1.SelectedDate = DateTime.Now.Date;
+            Calendar1.VisibleDate = DateTime.Now.Date;
         }
 
         protected void btnDeleteImage_Click(object sender, EventArgs e)
         {
-
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            string fileName = gvGallery.DataKeys[gvr.RowIndex].Values[0].ToString();
+            File.Delete(Path.Combine(Server.MapPath("~/Images/Gallery/"), fileName));
+            gvGallery.DataSource = Methods.GetImages(Server.MapPath("~/Images/Gallery"));
+            gvGallery.DataBind();
         }
 
         protected void gvGallery_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -508,16 +518,16 @@ namespace GoodEatsOrchardPublic
 
         protected void btnGalleryImage(object sender, EventArgs e)
         {
-            HttpPostedFile img = Request.Files["avatarUpload"];
-            
-            Response.Write("it is" + img.FileName);
+            HttpPostedFile img = HttpContext.Current.Request.Files[0];
+
             if (img == null || img.ContentLength == 0)
             {
             }
             else
             {
                 string fileName = img.FileName;
-                string tempFileName = "";
+                string tempFileName = fileName;
+
                 if (Methods.isPictureFile(fileName))
                 {
 
@@ -530,8 +540,9 @@ namespace GoodEatsOrchardPublic
                     try
                     {
                         img.SaveAs(Server.MapPath("~/Images/Gallery/") + tempFileName);
-                        Page.Response.Redirect(Page.Request.Url.ToString(), true);
-                        MultiView1.ActiveViewIndex = 2;
+
+                        plNewGalleryImage.Visible = false;
+                        plGalleryImageSucc.Visible = true;
                     }
                     catch (Exception ex)
                     {
@@ -543,8 +554,131 @@ namespace GoodEatsOrchardPublic
                 }
 
             }
+            gvGallery.DataSource = Methods.GetImages(Server.MapPath("~/Images/Gallery"));
+            gvGallery.DataBind();
+
+        }
+
+        protected void btnAnotherGalleryImg_Click(object sender, EventArgs e)
+        {
+            plGalleryImageSucc.Visible = false;
+            plNewGalleryImage.Visible = true;
+        }
+
+        public void initArticle()
+        {
+            Article article = new Article();
+            Session["article"] = article;
+        }
+        protected void btnArticleAdd_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(Server.MapPath("~/Temp")))
+            {
+                Directory.Delete(Server.MapPath("~/Temp"), true);
+            }
+
+            Directory.CreateDirectory(Server.MapPath("~/Temp"));
+            plJournal.Visible = true;
+
+            initArticle();
+        }
+
+        protected void btnLoadNewsPic_Click(object sender, EventArgs e)
+        {
+            HttpPostedFile img = HttpContext.Current.Request.Files[0];
+var article = Session["article"] as Article;
+            if (img == null || img.ContentLength == 0)
+            {
+            }
+            else
+            {
+                string fileName = img.FileName;
+                string tempFileName = fileName;
+
+                if (Methods.isPictureFile(fileName))
+                {
+                    int somnum = 0;
+                    while (Methods.fileExists(Server.MapPath("~/Temp/"), tempFileName))
+                    {
+                        tempFileName = "(" + somnum + ")" + fileName;
+                        somnum++;
+                    }
+                    while (Methods.fileExists(Server.MapPath("~/Images/News/"), tempFileName))
+                    {
+                        tempFileName = "(" + somnum + ")" + fileName;
+                        somnum++;
+                    }
+                    try
+                    {
+                        img.SaveAs(Server.MapPath("~/Temp/") + tempFileName);
+                        FileInfo fileInfo= new FileInfo(Server.MapPath("~/Temp/") + tempFileName);
+                        fileInfo.IsReadOnly = false;
+                        NewsImage imgInfo = new NewsImage();
+                        imgInfo.fileName = tempFileName;
+
+                        article.articleImages.Add(imgInfo);
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                }
+                
+                dlArtPicsPreview.DataSource = article.articleImages;
+                dlArtPicsPreview.DataBind();
+            }
+            
+            //Response.Write(article.Content);
+            //foreach (NewsImage x in article.articleImages)
+            //{
+            //    Response.Write(x.fileName);
+            //}
 
 
+        }
+
+        protected void dlArtPicsPreview_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            Image img = (Image)e.Item.FindControl("imgArtPicStage");
+            img.ImageUrl = Path.Combine("~/Temp/", dlArtPicsPreview.DataKeys[e.Item.ItemIndex].ToString());
+
+        }
+
+        protected void btnSbtNewArticle_Click(object sender, EventArgs e)
+        {
+            var article = Session["article"] as Article;
+            foreach (NewsImage picInfo in article.articleImages)
+            {
+                string fileName= picInfo.fileName;
+                string from = Path.Combine(Server.MapPath("~/Temp/"), fileName);
+                string to = Path.Combine(Server.MapPath("~/Images/News/"), fileName);
+                File.Move( from, to);
+                //foreach(string file in DirectoryInfo("Temp")
+
+            }
+            article.newsDate = Calendar1.SelectedDate;
+            article.Content = txtArtContent.Text;
+            article.save();
+        }
+
+
+        protected void btnRemoveArtPic_Click(object sender, EventArgs e)
+        {
+            var article = Session["article"] as Article;
+            Button btn = (Button)sender;
+            DataListItem dli = (DataListItem)btn.NamingContainer;
+            string DLfileName = dlArtPicsPreview.DataKeys[dli.ItemIndex].ToString();
+            foreach(NewsImage img in article.articleImages.ToList())
+            {
+                if(img.fileName == DLfileName)
+                {
+                    article.articleImages.Remove(img);
+                }
+            }
+            dlArtPicsPreview.DataSource = article.articleImages;
+            dlArtPicsPreview.DataBind();
         }
     }
 }

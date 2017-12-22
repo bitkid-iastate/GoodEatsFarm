@@ -34,7 +34,8 @@ namespace GoodEatsOrchardPublic.Code
         //Checks file extension based on given filename string
         public static bool isPictureFile(string fileName)
         {
-            if (fileName.ToUpper().EndsWith(".JPG")){
+            if (fileName.ToUpper().EndsWith(".JPG") || fileName.ToUpper().EndsWith(".PNG"))
+            {
                 return true;
             }
             else

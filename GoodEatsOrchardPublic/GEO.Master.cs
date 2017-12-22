@@ -36,7 +36,7 @@ namespace GoodEatsOrchardPublic
             if (announce.onOrOff)
             {
                 txtAnnounce.Visible = true;
-                txtAnnounce.Text = announce.announce;
+                Literal1.Text = announce.announce;
             }
             else
             {

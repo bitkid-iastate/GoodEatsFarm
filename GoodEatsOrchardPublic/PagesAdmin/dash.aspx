@@ -18,6 +18,23 @@
             }
         }
     </script>
+    <script type="text/javascript">
+        function previewFile2() {
+            var preview = document.querySelector('#<%=imgNewsSample.ClientID %>');
+            var file = document.querySelector('#<%=flNewsSample.ClientID %>').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -211,12 +228,14 @@
                     <br />
                 </asp:Panel>
                 <asp:Panel ID="plGalleryImageSucc" runat="server">
+                    Success!!!
+                    <asp:Button ID="btnAnotherGalleryImg" runat="server" Text="Add another" OnClick="btnAnotherGalleryImg_Click" />
                 </asp:Panel>
                 <asp:GridView ID="gvGallery" runat="server" AutoGenerateColumns="False" DataKeyNames="FileName" OnRowDataBound="gvGallery_RowDataBound">
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="btnDeleteImage" runat="server" OnClick="btnDeleteImage_Click" Text="Delete" />
+                                <asp:Button ID="btnDeleteImage" OnClientClick="return confirm('Are you sure you want to PERMANENTLY delete this image? Deleting this image will remove it from the server, and you will not be able to get it back.');" runat="server" OnClick="btnDeleteImage_Click" Text="Delete" />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
@@ -230,7 +249,28 @@
         </asp:View>
         <asp:View ID="View4" runat="server">
             <div class="dashForm">
+                <asp:Button ID="btnArticleAdd" runat="server" Text="New" OnClick="btnArticleAdd_Click" />
                 <asp:Panel ID="plJournal" runat="server">
+
+                    <input id="flNewsSample" type="file" name="file" onchange="previewFile2()" runat="server" />
+                    <%--<asp:FileUpload ID="avatarUpload" runat="server" />--%>
+                    <asp:Button ID="btnLoadNewsPic" runat="server" Text="Upload" OnClick="btnLoadNewsPic_Click" />
+                    <asp:Image ID="imgNewsSample" runat="server" ImageUrl="~/Images/NoUser.jpg" Width="225px" />
+
+                    <br />
+                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    <asp:DataList ID="dlArtPicsPreview" runat="server" RepeatDirection="Horizontal" DataKeyField="fileName" OnItemDataBound="dlArtPicsPreview_ItemDataBound">
+                        <ItemTemplate>
+                            <div class="button-container">     
+<asp:Image ID="imgArtPicStage"  runat="server" CssClass="button-image"/>
+                                <asp:Button ID="btnRemoveArtPic"  runat="server" Text="REMOVE" OnClick="btnRemoveArtPic_Click" CssClass="button-text"/>
+                           </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:TextBox ID="txtArtContent" runat="server" Rows="7" TextMode="MultiLine" Width="600px"></asp:TextBox>
+
+                    <asp:Button ID="btnSbtNewArticle" runat="server" OnClick="btnSbtNewArticle_Click" style="height: 26px" Text="Submit" />
+
                 </asp:Panel>
             </div>
         </asp:View>
