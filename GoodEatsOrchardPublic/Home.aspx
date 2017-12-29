@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GEO.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="GoodEatsOrchardPublic.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/Content/GEO.css">
     <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/Mapster/jquery.imagemapster.js"></script>
@@ -40,18 +40,20 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li><asp:Literal ID="Literal2" runat="server"></asp:Literal>
+      <%--<li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
         <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>--%>
+        
     </ol>
 
-    <!-- Wrapper for slides -->    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+    <!-- Wrapper for slides -->    
        
     <div class="carousel-inner">
-      <div class="item active">
+        <asp:Literal ID="Literal3" runat="server"></asp:Literal>
+      <%--<div class="item active">
         <img src="/Images/Rotator/image1.JPG" alt="Los Angeles" style="width:100%;">
       </div>
 
@@ -73,7 +75,7 @@
 
          <div class="item">
         <img src="/Images/Rotator/IMG_1276.jpg" alt="New york" style="width:100%;">
-      </div>
+      </div>--%>
     </div>
 
     <!-- Left and right controls -->
@@ -94,14 +96,16 @@
         <asp:TableRow>
             <asp:TableCell runat="server"></asp:TableCell>
             <asp:TableCell><div class="content-words">
-                <%--&nbsp  &nbsp &nbsp<b class="big">&ldquo;</b><br />--%>&nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp 
+               <%--<%--<%-- <%--&nbsp  &nbsp &nbsp<b class="big">&ldquo;</b><br />--%><%--&nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp 
                 Established in 2013, Good Eats Farm and Orchard is modest and family-operated. The farm is nearly entirely maintained by it's owners, and it's located in walking distance from Lake Aqhuabi! 
             Known for it's variety of farm-fresh fruits and vegetables, along with eggs from both free-range chickens and ducks, only lucky denizens of the Des Moines area (and visitors, of course)
             have been able to get a hold of their declicious products. 
                 <br />
                 &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbspGood Eats Farm and Orchard sells at local farmer's markets, and directly, by contacting one of the owners. 
             Check back here at this website, under the "News" or "Calendar" pages, to find out which farmer's market they will be at next, and when! Or if you have an urgent need to satisfy your fresh
-            food fix, just give them a call! &nbsp  &nbsp <br /><br />
+            food fix, just give them a call! &nbsp  &nbsp--%> 
+                <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                <br /><br />
           <%--  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

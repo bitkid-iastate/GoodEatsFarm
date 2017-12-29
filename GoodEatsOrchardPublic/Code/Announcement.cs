@@ -62,6 +62,28 @@ namespace GoodEatsOrchardPublic.Code
             reader.Close();
             return visitCounterObject;
         }
+
+        public static AboutUs GetAboutUs()
+        {
+
+            XmlSerializer machine = new XmlSerializer(typeof(AboutUs));
+            TextReader reader = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("/App_Data/AboutUs.xml"));
+            object obj = machine.Deserialize(reader);
+            AboutUs aboutUs = (AboutUs)obj;
+            reader.Close();
+            return aboutUs;
+        }
+
+        public static Homepage GetHomepageContent()
+        {
+
+            XmlSerializer machine = new XmlSerializer(typeof(Homepage));
+            TextReader reader = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("/App_Data/Homepage.xml"));
+            object obj = machine.Deserialize(reader);
+            Homepage hp = (Homepage)obj;
+            reader.Close();
+            return hp;
+        }
     }
 }
 

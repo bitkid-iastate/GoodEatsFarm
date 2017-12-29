@@ -3,17 +3,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="flex">
-        <div>
-            <a href="/PagesPublic/Fruits.aspx" class="fbox">Fruits</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/Fuji.jpg" />
+            <a href="/PagesPublic/Fruits.aspx" class="fboxText">Fruits</a>
         </div>
-        <div>
-            <a href="/PagesPublic/Vegetablez.aspx"class="fbox">Vegtables</a>
+        <div class="fbox"> 
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/GoldDelicious.jpg" />
+            <a href="/PagesPublic/Vegetablez.aspx"class="fboxText">Vegtables</a>
         </div>
-        <div>
-            <a href="/PagesPublic/Eggz.aspx"class="fbox">Eggs & Poultry</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/GrannySmith.jpg" />
+            <a href="/PagesPublic/Eggz.aspx"class="fboxText">Eggs & Poultry</a>
         </div>
-        <div>
-            <a href="/PagesPublic/Flowerz.aspx" class="fbox">Flowers</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/Gravensteins.jpg" />
+            <a href="/PagesPublic/Flowerz.aspx" class="fboxText">Flowers</a>
         </div>
     </div>
 </asp:Content>

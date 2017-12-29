@@ -135,7 +135,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AboutUs.xml" />
     <Content Include="App_Data\Visits.xml" />
+    <Content Include="App_Data\Homepage.xml" />
     <Content Include="Images\DeerAndFarm.JPG" />
     <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-02-988.jpg" />
     <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-47-127.jpg" />
@@ -146,6 +148,7 @@
     <Content Include="PagesPublic\AsianPearz.aspx" />
     <Content Include="PagesPublic\Eggz.aspx" />
     <Content Include="PagesPublic\Flowerz.aspx" />
+    <Content Include="PagesPublic\MailList.aspx" />
     <Content Include="PagesPublic\Pearz.aspx" />
     <Content Include="PagesPublic\Plumz.aspx" />
     <Content Include="PagesPublic\Vegetablez.aspx" />
@@ -306,7 +309,9 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\AboutUs.cs" />
     <Compile Include="Code\Article.cs" />
+    <Compile Include="Code\Homepage.cs" />
     <Compile Include="Code\VisitCounter.cs" />
     <Compile Include="PagesPublic\AsianPearz.aspx.cs">
       <DependentUpon>AsianPearz.aspx</DependentUpon>
@@ -328,6 +333,13 @@
     </Compile>
     <Compile Include="PagesPublic\Flowerz.aspx.designer.cs">
       <DependentUpon>Flowerz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesPublic\MailList.aspx.cs">
+      <DependentUpon>MailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesPublic\MailList.aspx.designer.cs">
+      <DependentUpon>MailList.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesPublic\Pearz.aspx.cs">
       <DependentUpon>Pearz.aspx</DependentUpon>

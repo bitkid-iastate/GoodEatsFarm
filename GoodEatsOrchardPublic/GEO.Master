@@ -24,18 +24,26 @@
                 </li>
                 <li class="nav-item">
                     <a href="/PagesPublic/Products.aspx" class="nav-link">PRODUCTS</a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menux">
                         <ul>
-                            <li><a href="/PagesPublic/Vegetablez.aspx">Vegtables</a></li>
-                            <li><a href="/PagesPublic/Fruits.aspx">Fruits</a></li>
-                            <li><a href="/PagesPublic/Eggz.aspx">Poultry & Eggs</a></li>
-                            <li><a href="/PagesPublic/Flowerz.aspx">Flowers</a></li>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/Vegetablez.aspx">Vegtables</a></li>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/Fruits.aspx">Fruits</a></li>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/Eggz.aspx">Poultry & Eggs</a></li>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/Flowerz.aspx">Flowers</a></li>
                         </ul>
 
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="/PagesPublic/Contact.aspx" class="nav-link">CONTACT US</a>
+                    <div class="dropdown-menux">
+                        <ul>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/Contact.aspx">Message Us</a></li>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/Address.aspx">Address & Phone Number</a></li>
+                            <li><a style="font-family: \'Lato\', sans-serif; font-size: 15px" href="/PagesPublic/MailList.aspx">Join our mailing list!</a></li>
+                        </ul>
+
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="/PagesPublic/Calendar.aspx" class="nav-link">CALENDAR and EVENTS</a>
@@ -89,7 +97,7 @@
         
         <br />
         <br />
-        <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a href="/PagesPublic/Pass.aspx">Login</a></footer>
+        <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a class="footerA" href="/PagesPublic/Pass.aspx">Login</a></footer>
 
     </form>
         

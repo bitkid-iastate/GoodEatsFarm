@@ -45,21 +45,22 @@ namespace GoodEatsOrchardPublic
 
                     string path = Path.Combine("/Images/News/", img.fileName);
                     //240x150
-                    string html = string.Format("<img id=\"myImg\" src=\"{0}\" width=\"180\" height=\"120\" onclick=\"modalize(this)\">", path);
+                    string html = string.Format("<img id=\"myImg\" src=\"{0}\" width=\"170\" height=\"115\" onclick=\"modalize(this)\">", path);
                     tc.Text += html;
 
                 }
                 row1.Cells.Add(tc);
                 TableCell tc2 = new TableCell();
-                tc2.Text = x.NewsContent + "<br /><hr>";
+                tc2.Text = string.Format("<br /><div class=\"news\">{0}</div><br /><hr>", x.NewsContent);
                 row2.Cells.Add(tc2);
                 TableCell tc3 = new TableCell();
-                tc3.Text = x.NewsDate.ToShortDateString();
+                tc3.Text = string.Format("<div class=\"newsP\">Posted on {0}</div><br /><br />", x.NewsDate.ToShortDateString());
                 dateRow.Cells.Add(tc3);
                 tbl.Rows.Add(dateRow);
                 tbl.Rows.Add(row1);
                 tbl.Rows.Add(row2);
-                tbl.Width = 960;
+                tbl.Width = 900;
+                tbl.Attributes.Add("class", "newsTbl");
                 plNews.Controls.Add(tbl);
             }
 

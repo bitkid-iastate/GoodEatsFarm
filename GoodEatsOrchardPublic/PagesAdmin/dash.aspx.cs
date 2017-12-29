@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -490,6 +491,10 @@ namespace GoodEatsOrchardPublic
             plJournal.Visible = false;
             Calendar1.SelectedDate = DateTime.Now.Date;
             Calendar1.VisibleDate = DateTime.Now.Date;
+            GoodEatsFarmDataContext db = new GoodEatsFarmDataContext();
+            var newses = db.uspNewsGetAll();
+            gvNews.DataSource = newses;
+            gvNews.DataBind();
         }
 
         protected void btnDeleteImage_Click(object sender, EventArgs e)
@@ -659,7 +664,7 @@ var article = Session["article"] as Article;
 
             }
             article.newsDate = Calendar1.SelectedDate;
-            article.Content = txtArtContent.Text;
+            article.Content = txtArtContent.Text.Replace(" ", "&nbsp").Replace("\r\n", "<br/>");
             article.save();
         }
 
@@ -679,6 +684,137 @@ var article = Session["article"] as Article;
             }
             dlArtPicsPreview.DataSource = article.articleImages;
             dlArtPicsPreview.DataBind();
+        }
+
+        protected void btnView5_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 4;
+            blRotatorAddImageErr.Items.Clear();
+            blRotatorAddImageErr.Visible = false;
+            plRotatorImgAddSucc.Visible = false;
+            plRotatorAddImage.Visible = true;
+            gvRotatorImgs.DataSource = Methods.GetImages(Server.MapPath("~/Images/Rotator"));
+            gvRotatorImgs.DataBind();
+
+            Homepage hp = decerealizer.GetHomepageContent();
+            txtHomeContent.Text = hp.content.Replace("&nbsp", "").Replace("<br />", Environment.NewLine);
+        }
+
+        protected void gvRotatorImgs_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Image img = (Image)e.Row.FindControl("rotatorImgThumb");
+                img.ImageUrl = "~/Images/Rotator/" + gvRotatorImgs.DataKeys[e.Row.RowIndex].Values[0].ToString();
+            }
+        }
+
+        protected void btnDeleteRotatorImage_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            string fileName = gvRotatorImgs.DataKeys[gvr.RowIndex].Values[0].ToString();
+            File.Delete(Path.Combine(Server.MapPath("~/Images/Rotator/"), fileName));
+            gvRotatorImgs.DataSource = Methods.GetImages(Server.MapPath("~/Images/Rotator"));
+            gvRotatorImgs.DataBind();
+        }
+
+        protected void rotatorSbmt_Click(object sender, EventArgs e)
+        {
+            HttpPostedFile img = HttpContext.Current.Request.Files[0];
+
+            if (img == null || img.ContentLength == 0)
+            {
+                ListItem item = new ListItem();
+                item.Text = "Choose a file to add.";
+                blRotatorAddImageErr.Items.Add(item);
+                blRotatorAddImageErr.Visible = true;
+
+            }
+            else
+            {
+                string fileName = img.FileName;
+                string tempFileName = fileName;
+
+                if (Methods.isPictureFile(fileName))
+                {
+
+                    int somnum = 0;
+                    while (Methods.fileExists(Server.MapPath("~/Images/Rotator/"), tempFileName))
+                    {
+                        tempFileName = "(" + somnum + ")" + fileName;
+                        somnum++;
+                    }
+                    try
+                    {
+                        img.SaveAs(Server.MapPath("~/Images/Rotator/") + tempFileName);
+
+                        plRotatorAddImage.Visible = false;
+                        plRotatorImgAddSucc.Visible = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        blErrors.Visible = true;
+                        blErrors.Items.Add(ex.Message);
+
+                    }
+
+                }
+
+            }
+            gvRotatorImgs.DataSource = Methods.GetImages(Server.MapPath("~/Images/Rotator"));
+            gvRotatorImgs.DataBind();
+        }
+
+        protected void btnAboutUsSbt_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.content = txtAboutUs.Text.Replace(Environment.NewLine, " <br /> ").Replace(" ", " &nbsp");
+            aboutUs.serialize();
+        }
+
+        protected void btnView6_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 5;
+            AboutUs aboutUs = decerealizer.GetAboutUs();
+            txtAboutUs.Text = aboutUs.content.Replace("&nbsp", "").Replace("<br />", Environment.NewLine);
+        }
+
+        protected void btnNewsEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNewsDelete_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            string artId = gvNews.DataKeys[gvr.RowIndex].Values[0].ToString();
+            GoodEatsFarmDataContext db = new GoodEatsFarmDataContext();
+            try
+            {
+db.uspNewsAndPicsDelete(artId);
+            }
+            catch(Exception ex)
+            {
+                ListItem li = new ListItem();
+                li.Text = ex.Message;
+                blNewsErr.Items.Add(li);
+                blNewsErr.Visible = true;
+            }
+            
+        }
+
+        protected void btnView7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnHomeCntSbt_Click(object sender, EventArgs e)
+        {
+            Homepage hp = new Homepage();
+            hp.content = txtHomeContent.Text.Replace(Environment.NewLine, " <br /> ").Replace(" ", " &nbsp");
+            hp.serialize();
         }
     }
 }

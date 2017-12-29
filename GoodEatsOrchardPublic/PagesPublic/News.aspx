@@ -32,7 +32,7 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="img01" />
     </div>
-    <div id="news">
+    <div id="news" class="newsBox">
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
     </div>
 

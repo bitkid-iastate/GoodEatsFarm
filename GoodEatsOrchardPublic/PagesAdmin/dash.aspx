@@ -35,21 +35,43 @@
             }
         }
     </script>
+    <script type="text/javascript">
+        function previewFile3() {
+            var preview = document.querySelector('#<%=rotatorImg.ClientID %>');
+            var file = document.querySelector('#<%=rotatorFile.ClientID %>').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-    <div style="display: block; width: 700px; margin: auto">
-        <asp:Button ID="btnView1" runat="server" Text="Dashboard" Style="display: block; float: left" OnClick="btnView1_Click" />
-        <asp:Button ID="btnView2" runat="server" Text="Edit Products" Style="display: block; float: left" OnClick="btnView2_Click" />
-        <asp:Button ID="btnView3" runat="server" Text="Edit Gallery" Style="display: block; float: left" OnClick="btnView3_Click" />
-        <asp:Button ID="btnView4" runat="server" Text="Farm News" Style="display: block; float: left" OnClick="btnView4_Click" />
+    <div style="display: block; width: 874px; margin: auto">
+        <asp:Button ID="btnView1" runat="server" Text="Dashboard" Style="display: block; float: left" OnClick="btnView1_Click" Font-Bold="True" Font-Size="Large" />
+        <asp:Button ID="btnView5" runat="server" Text="Homepage" Style="display: block; float: left" OnClick="btnView5_Click" Font-Bold="True" Font-Size="Large" />
+        <asp:Button ID="btnView4" runat="server" Text="Farm News" Style="display: block; float: left" OnClick="btnView4_Click" Font-Bold="True" Font-Size="Large" />
+        <asp:Button ID="btnView6" runat="server" Text="About Us" Style="display: block; float: left" OnClick="btnView6_Click" Font-Bold="True" Font-Size="Large" />
+        <asp:Button ID="btnView2" runat="server" Text="Products" Style="display: block; float: left" OnClick="btnView2_Click" Font-Bold="True" Font-Size="Large" />
+        <asp:Button ID="btnView3" runat="server" Text="Gallery" Style="display: block; float: left" OnClick="btnView3_Click" Font-Bold="True" Font-Size="Large" />
+        <asp:Button ID="btnView7" runat="server" Text="Background" Style="display: block; float: left" Font-Bold="True" Font-Size="Large" OnClick="btnView7_Click" />
+
     </div>
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="View1" runat="server">
             <div class="dashForm">
-                Number of visits:
-                <asp:Label ID="lblVisits" runat="server"></asp:Label>
+                <p class="content-words">Number of visits:<br />
+                </p>
+                <asp:Label ID="lblVisits" runat="server" ForeColor="#333333" Font-Bold="True" Font-Italic="True" Font-Size="X-Large"></asp:Label>
             </div>
             <div class="dashForm">
                 Jumbotron (On/Off):
@@ -59,13 +81,15 @@
 
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" UseSubmitBehavior="False" />
             </div>
+
+        </asp:View>
+        <asp:View ID="View2" runat="server">
             <div class="dashForm">
                 <asp:Panel ID="plNewProduct" runat="server">
                     <asp:BulletedList ID="blErrors" runat="server" BulletStyle="Circle" Font-Bold="True" Font-Size="Large" ForeColor="#CC0000" Visible="False">
                     </asp:BulletedList>
-                    <br />
-                    Add new product:
-        <br />
+                    <p class="content-words">Add new product:<br />
+                    </p>
                     Category:
             <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
                 <asp:ListItem Selected="True">none</asp:ListItem>
@@ -107,10 +131,10 @@
                     <asp:Button ID="newProduct" runat="server" Text="Add Another" OnClick="newProduct_Click" />
                 </asp:Panel>
             </div>
-        </asp:View>
-        <asp:View ID="View2" runat="server">
             <asp:Panel ID="plProductsView" runat="server">
                 <div class="dashForm">
+                    <p class="content-words">Edit Existing Products<br />
+                    </p>
                     Category:
             <asp:DropDownList ID="ddlCategory2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory2_SelectedIndexChanged">
                 <asp:ListItem Selected="True">none</asp:ListItem>
@@ -250,7 +274,13 @@
         <asp:View ID="View4" runat="server">
             <div class="dashForm">
                 <asp:Button ID="btnArticleAdd" runat="server" Text="New" OnClick="btnArticleAdd_Click" />
+                <asp:BulletedList ID="blNewsErr" runat="server" Visible="False">
+                </asp:BulletedList>
                 <asp:Panel ID="plJournal" runat="server">
+
+                    <asp:Panel ID="plNewsInsertSuccess" runat="server" Visible="False">
+                        <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Larger" Text="Success!"></asp:Label>
+                    </asp:Panel>
 
                     <input id="flNewsSample" type="file" name="file" onchange="previewFile2()" runat="server" />
                     <%--<asp:FileUpload ID="avatarUpload" runat="server" />--%>
@@ -261,18 +291,81 @@
                     <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
                     <asp:DataList ID="dlArtPicsPreview" runat="server" RepeatDirection="Horizontal" DataKeyField="fileName" OnItemDataBound="dlArtPicsPreview_ItemDataBound">
                         <ItemTemplate>
-                            <div class="button-container">     
-<asp:Image ID="imgArtPicStage"  runat="server" CssClass="button-image"/>
-                                <asp:Button ID="btnRemoveArtPic"  runat="server" Text="REMOVE" OnClick="btnRemoveArtPic_Click" CssClass="button-text"/>
-                           </div>
+                            <div class="button-container">
+                                <asp:Image ID="imgArtPicStage" runat="server" CssClass="button-image" />
+                                <asp:Button ID="btnRemoveArtPic" runat="server" Text="REMOVE" OnClick="btnRemoveArtPic_Click" CssClass="button-text" />
+                            </div>
                         </ItemTemplate>
                     </asp:DataList>
                     <asp:TextBox ID="txtArtContent" runat="server" Rows="7" TextMode="MultiLine" Width="600px"></asp:TextBox>
 
-                    <asp:Button ID="btnSbtNewArticle" runat="server" OnClick="btnSbtNewArticle_Click" style="height: 26px" Text="Submit" />
+                    <asp:Button ID="btnSbtNewArticle" runat="server" OnClick="btnSbtNewArticle_Click" Style="height: 26px" Text="Submit" />
 
                 </asp:Panel>
+                <asp:Panel ID="plNews" runat="server">
+                    <asp:GridView ID="gvNews" runat="server" AutoGenerateColumns="False" DataKeyNames="NewsID">
+                        <Columns>
+                            <asp:BoundField DataField="NewsDate" HeaderText="Time &amp; Date" />
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="btnNewsEdit" runat="server" OnClick="btnNewsEdit_Click" Text="Edit" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="btnNewsDelete" runat="server" OnClick="btnNewsDelete_Click" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete this? THERE IS NO GOING BACK.');"/>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </asp:Panel>
             </div>
+        </asp:View>
+
+        <asp:View ID="View5" runat="server">
+            <div class="dashForm">
+                <asp:Panel ID="plHomeContent" runat="server">
+                    <asp:TextBox ID="txtHomeContent" runat="server" Height="238px" TextMode="MultiLine" Width="729px"></asp:TextBox>
+                    <asp:Button ID="btnHomeCntSbt" runat="server" Text="Update" OnClick="btnHomeCntSbt_Click" />
+                </asp:Panel>
+                <asp:Panel ID="plRotatorAddImage" runat="server">
+                    <p class="content-words">Add a new picture to the home page:<br />
+                    </p>
+                    <asp:BulletedList ID="blRotatorAddImageErr" runat="server"></asp:BulletedList>
+
+                    <%--javascript image preview source code --%>
+
+                    <input id="rotatorFile" type="file" name="file" onchange="previewFile3()" runat="server" />
+                    <%--<asp:FileUpload ID="avatarUpload" runat="server" />--%>
+                    <asp:Button ID="rotatorSbmt" runat="server" Text="Upload" OnClick="rotatorSbmt_Click" />
+                    <asp:Image ID="rotatorImg" runat="server" Width="225px" minwidth="225px" minheight="225px" />
+
+                    <br />
+                    <br />
+                </asp:Panel>
+                <asp:Panel ID="plRotatorImgAddSucc" runat="server">
+                    Success!!!
+                    <asp:Button ID="btnRotatorAddAnother" runat="server" Text="Add another" />
+                </asp:Panel>
+                <asp:GridView ID="gvRotatorImgs" runat="server" AutoGenerateColumns="False" DataKeyNames="FileName" OnRowDataBound="gvRotatorImgs_RowDataBound">
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Button ID="btnDeleteRotatorImage" OnClientClick="return confirm('Are you sure you want to PERMANENTLY delete this image? Deleting this image will remove it from the server, and you will not be able to get it back.');" runat="server" Text="Delete" OnClick="btnDeleteRotatorImage_Click" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Image ID="rotatorImgThumb" runat="server" BorderStyle="Outset" Width="200px" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            </div>
+        </asp:View>
+        <asp:View ID="View6" runat="server">
+            <asp:TextBox ID="txtAboutUs" runat="server" Height="400px" TextMode="MultiLine" Width="900px"></asp:TextBox>
+            <asp:Button ID="btnAboutUsSbt" runat="server" Text="Update" OnClick="btnAboutUsSbt_Click" />
         </asp:View>
     </asp:MultiView>
 

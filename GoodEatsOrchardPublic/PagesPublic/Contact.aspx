@@ -46,7 +46,7 @@ Indianola, Iowa 50125</p></asp:TableCell>
             <p>
             </p>
             <p class="content-words">
-                Please Fill the Following to send us a message.
+                Please fill the following to send us a message.
                 <br />
             <br />
                 Your name:
@@ -70,7 +70,10 @@ Indianola, Iowa 50125</p></asp:TableCell>
             ControlToValidate="Comments" ValidationGroup="save" /><br />
                 <asp:TextBox ID="Comments" runat="server"
                     TextMode="MultiLine" Rows="10" Width="400px" />
-            
+                <br />
+                <br />
+                <asp:CheckBox ID="chkbxOptIntoMail" Text="&nbsp&nbsp Would you like to get GoodEats emails? (We only do this sparingly)" runat="server" />
+            <br />
             <BotDetect:WebFormsCaptcha ID="ExampleCaptcha" runat="server" />
                 <p>
                     <asp:TextBox ID="CaptchaCode" runat="server" />
@@ -78,7 +81,7 @@ Indianola, Iowa 50125</p></asp:TableCell>
                     <br />
                     <br />
                     <asp:Button ID="btnSubmit" runat="server" Height="30px" OnClick="Button1_Click" Text="Send" ValidationGroup="save" Width="80px" />
-                </p>
+                
 
             </p>
             

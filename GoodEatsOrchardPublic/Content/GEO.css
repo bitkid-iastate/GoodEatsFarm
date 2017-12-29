@@ -41,7 +41,8 @@ body{
     background-color: #70bd85;
     /*position: fixed;*/
     /*background-color: white;*/
-    z-index: 9999
+    z-index: 9999;
+    /*box-shadow: 0 8px 12px 0px rgba(0,0,0,.2);*/
 }
 
 .nav-item {
@@ -51,7 +52,7 @@ body{
 
 .nav-link {
     display: inline-block;
-    padding: 10px;
+    padding: 11px;
     padding-left: 35px;
     padding-right: 35px;
     /*color: black;*/
@@ -74,7 +75,7 @@ body{
     z-index: 9999
 }
 
-.dropdown-menu {
+.dropdown-menux {
     display: none;
     position: absolute;
     min-width: 200px;
@@ -86,7 +87,7 @@ body{
 }
 
 
-.nav-item:hover .dropdown-menu {
+.nav-item:hover .dropdown-menux {
     display: block;
     padding: 0;
     margin: 0;
@@ -96,7 +97,7 @@ body{
    
 }
 
-.dropdown-menu a {
+.dropdown-menux a {
     display: block;
     padding: 10px;
     color: black;
@@ -106,7 +107,7 @@ body{
     z-index: 9999
 }
 
-    .dropdown-menu a:hover {
+    .dropdown-menux a:hover {
         color: gray; 
     }
 
@@ -118,7 +119,7 @@ ul {
 }
 
 
-a {
+.footerA {
     text-decoration: none;
     color: dodgerblue;
 }
@@ -187,26 +188,51 @@ footer{
 .aboutUs{
     float: left;
     padding: 0;
-    margin-right: 10px
+    margin-right: 10px;
+    border-style: groove;
+    border-width:thick;
+    border-color: #a77c43;
 }
+
 
 .flex{
     display: flex;
     align-content: center;
     justify-content: center;
-    background-color: grey;
     flex-wrap: wrap;
+    padding: 25px;
+}
+
+a{
+    text-decoration: none;
 }
 
 .fbox{
-    display: block;
-    background-color: white;
-    width: 200px;
-    padding: 50px;
+    position: relative;
     margin: 10px;
-    text-align: center;
-
 }
+
+.fboxImg{
+    display: block;
+}
+
+.fboxText {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 45px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+
+    .fboxText:hover {
+        background-color: rgba(0,0,0,0);
+    }
+
 
 .dashForm {
     display: block;
@@ -370,6 +396,21 @@ footer{
     .button-container:hover .button-text {
         display: block;
     }
+
+.news {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: medium
+}
+.newsP {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: larger
+}
+.newsBox{
+    width: 100%;
+}
+.newsTbl{
+    margin: auto;
+}
 
 
 

@@ -2,19 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="max-width: 800px; margin: auto;">
+    
     <div class="flex">
-        <div>
-            <a href="/PagesPublic/Applez.aspx" class="fbox">Apples</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/Fuji.jpg" />
+            <a href="/PagesPublic/Applez.aspx" class="fboxText">Apples</a>
         </div>
-        <div>
-            <a href="/PagesPublic/Pearz.aspx"class="fbox">Pears</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/Fuji.jpg" />
+            <a href="/PagesPublic/Pearz.aspx"class="fboxText">Pears</a>
         </div>
-        <div>
-            <a href="/PagesPublic/Plumz.aspx"class="fbox">Plums</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/Fuji.jpg" />
+            <a href="/PagesPublic/Plumz.aspx"class="fboxText">Plums</a>
         </div>
-        <div>
-            <a href="/PagesPublic/AsianPearz.aspx"class="fbox">Asian Pears</a>
+        <div class="fbox">
+            <img class="fboxImg" width="300" height="150" src="../Images/Products/Fuji.jpg" />
+            <a href="/PagesPublic/AsianPearz.aspx"class="fboxText">Asian Pears</a>
         </div>
-    </div></div>
+    </div>
 </asp:Content>

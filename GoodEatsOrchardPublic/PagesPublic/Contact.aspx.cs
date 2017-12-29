@@ -42,6 +42,7 @@ namespace GoodEatsOrchardPublic
                         YourEmail.Text = "";
                         YourName.Text = "";
                         Comments.Text = "";
+                        chkbxOptIntoMail.Checked = false;
                         Panel1.Visible = false;
                         DisplayMessage.Text = "Your message was delivered!";
                         DisplayMessage.Visible = true;
@@ -90,6 +91,12 @@ namespace GoodEatsOrchardPublic
             }
             // Passing values to smtp object
             smtp.Send(fromAddress, toAddress, subject, body);
+
+            if (chkbxOptIntoMail.Checked)
+            {
+                GoodEatsFarmDataContext db = new GoodEatsFarmDataContext();
+                db.uspConnectionInsert(YourName.Text, YourEmail.Text, null);
+            }
         }
 
 
