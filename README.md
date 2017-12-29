@@ -26,18 +26,18 @@
   
   * Keyword meta, description meta, and fast pages for SEO
   * Social media meta tags for more robust sharing on social networks (Normally, when sharing a website on social media just the URL is posted.
-  But this website will automatically share a company logo, name, and description or slogan.)
-  * Custom business logos with transparent backgrounds for proffesional look
+  But this website will automatically share a company logo, name, and description/slogan.)
+  * Custom business logos with transparent backgrounds for professional look
   * Website visit counter counts sessions, not page hits. Viewable by authenticated users
   * Homepage image carousel, images can be set with credentials
-  * Imagemap combined with an aerial photo of the farm creates an interactive experience between the user and the different parts of the farm
-  * Annoucemenent box front and center, and shows on everypage. Authenticated user can set the announcement. It can be turned on and off.
+  * Imagemap combined with an aerial photo of the farm creates an interactive experience between visitors and the different parts of the farm
+  * Annoucemenent box front and center, and shows on every page. Authenticated users can set the announcement. It can be turned on and off.
   * "News" page acts like the 'Wall' on Facebook. It allows an authenticated user to post blog style content with text and modal images
   * Text content on "About Us" and "Home" pages are dynamic and can be updated by authenticated user
   * All products in all pages under the "Products" menu are dynamic and can be added to, deleted, and edited by authenticated users
   * Special measures allow e-mails to be sent to from visitors to address of choice while preventing spam by hiding the business e-mail address AND prevents automated bots from using the form by requiring a CAPTCHA turing test
   * Optional sign-up to Good Eats Farm & Orchard mailing list
-  * Google API calendar makes it easy for the business to add events to website, and for visitors to add the Good Eats Farm events to their Google calendar
+  * Google API calendar makes it easy for the business to add events to the website, and for visitors to add Good Eats Farm events to their own Google calendars
   * The "Gallery" is touchscreen compatible
   * Favicon for bookmarks
   
