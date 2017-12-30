@@ -1,12 +1,13 @@
-  # Start Here
+
+# Start Here
   The folks at Good Eats Farm & Orchard where kind enough to give me a paid opportunity to learn the .NET framework by building
   **two** seperate systems for them. One of them uses webforms for a responsive business website and a content management system to go
-  with it. The other program is a business side application to keep track of customers, sales, and other farming information - which
+  with it. The other program is built using Microsoft MVC. It's a business side application to keep track of customers, sales, and other farming information - which
   is mostly for the purpose of tax reporting, getting business tax deductions, and getting USDA tax subsidies. Thank you Good Eats Farm & Orchard!
 
 
   ![alt text](https://orig00.deviantart.net/86ce/f/2017/362/a/c/geflogowhitev2___copy_by_zerosuitrusty-dby6faf.png)
-  # Business Website and CMS
+  # 1. Business Website and CMS
   
   #### What is it? It's a custom business website that an administrator can log into and make changes to content on the site, including: editing text content, changing pictures, and adding "News" to the news page. But that's not nearly all.
   
@@ -41,5 +42,9 @@
   * The "Gallery" is touchscreen compatible
   * Favicon for bookmarks
   
-  ### What I need from you
+  ### Look Forward to
+  * A business event countdown clock that can be set and turned on/off by authenticated user
+  * Authenticated user ability to change the website's background image
+  
+  ### What I Need From You
   Please report any bugs and/or security vulnerablities.
