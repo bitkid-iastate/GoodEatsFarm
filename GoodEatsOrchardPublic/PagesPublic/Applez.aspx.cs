@@ -22,8 +22,9 @@ namespace GoodEatsOrchardPublic
             {
                 Image picture = new Image();
                 picture.ID = "picture" + i;
-                picture.Width = 306;
-                picture.Height = 204;
+                //picture.Width = 306;
+                //picture.Height = 204;
+                picture.Attributes.Add("class", "productImage");
                 TableRow row = new TableRow();
                 TableCell cellOne = new TableCell();
                 TableCell cellTwo = new TableCell();
@@ -37,7 +38,7 @@ namespace GoodEatsOrchardPublic
                 cellOne.Controls.Add(picture);
                 cellTwo.Text = "<p class=\"content-words\"><b>" + prodName + "</b><br />" + prodPriceInfo + "<br />" + prodDesc+"</p>";
                 cellTwo.HorizontalAlign = HorizontalAlign.Left;
-                cellOne.Width = 320;
+                //cellOne.Width = 320;
                 
                 row.Cells.Add(cellOne);
                 row.Cells.Add(cellTwo);

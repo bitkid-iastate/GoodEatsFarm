@@ -3,6 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" Width="900"></asp:Table>
+    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center"></asp:Table>
     </asp:Content>
 

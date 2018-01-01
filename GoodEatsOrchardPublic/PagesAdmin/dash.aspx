@@ -52,6 +52,23 @@
             }
         }
     </script>
+    <%--<script type="text/javascript">
+        function previewFile4() {
+            var preview = document.querySelector('#<%=imgEditNewsImg.ClientID %>');
+            var file = document.querySelector('#<%=flEditNewsImg.ClientID %>').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>--%>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -77,7 +94,7 @@
                 Jumbotron (On/Off):
     <asp:CheckBox ID="chkJumbo" runat="server" OnCheckedChanged="chkJumbo_Changed" AutoPostBack="True" />
                 <br />
-                <asp:TextBox ID="txtJumbo" Style="resize: none" runat="server" Height="100px" Visible="False" Width="500px" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox ID="txtJumbo" Style="resize: none" runat="server" Height="100px" Visible="False" Width="500px" TextMode="MultiLine" Font-Size="Large"></asp:TextBox>
 
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" UseSubmitBehavior="False" />
             </div>
@@ -91,7 +108,7 @@
                     <p class="content-words">Add new product:<br />
                     </p>
                     Category:
-            <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
+            <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged" Font-Size="Large">
                 <asp:ListItem Selected="True">none</asp:ListItem>
                 <asp:ListItem Value="67a6ec19-a89b-43c9-8b69-a6711673c77e">Fruits</asp:ListItem>
                 <asp:ListItem Value="7c63455d-8753-4288-a006-f6443fb9147c">Vegetables</asp:ListItem>
@@ -99,7 +116,7 @@
                 <asp:ListItem Value="e4db916e-5427-42d0-8a94-6ced86bedabe">Eggs</asp:ListItem>
             </asp:DropDownList>
                     <br />
-                    <asp:RadioButtonList ID="chkbxCategory" runat="server" DataSourceID="LinqDataSource2" DataTextField="Name" DataValueField="CategoryID" RepeatDirection="Horizontal" Visible="False">
+                    <asp:RadioButtonList ID="chkbxCategory" runat="server" DataSourceID="LinqDataSource2" DataTextField="Name" DataValueField="CategoryID" RepeatDirection="Horizontal" Visible="False" Font-Size="Large">
                         <asp:ListItem Value="4c80b0af-7b83-4d26-95c4-9f23633c6085">Apple</asp:ListItem>
                         <asp:ListItem Value="f0b07dd5-5a30-44e5-839d-5595849e6ed5">Pear</asp:ListItem>
                         <asp:ListItem Value="4029a392-b5c0-4253-a8b9-e0262bab0fb2">Plum</asp:ListItem>
@@ -111,17 +128,25 @@
                         </WhereParameters>
                     </asp:LinqDataSource>
                     <br />
-                    Image:
-            <asp:FileUpload ID="FileUpload1" runat="server" ViewStateMode="Enabled" />
-                    <br />
-                    Title:
-            <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
-                    <br />
-                    Price:
-            <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                    <div class="content=words">
+                    <asp:Table ID="Table1" runat="server">
+                        <asp:TableRow runat="server">
+                            <asp:TableCell runat="server">Image:</asp:TableCell>
+                            <asp:TableCell runat="server"><asp:FileUpload ID="FileUpload1" runat="server" ViewStateMode="Enabled" Font-Size="Large" /></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow runat="server">
+                            <asp:TableCell runat="server">Title:</asp:TableCell>
+                            <asp:TableCell runat="server"><asp:TextBox ID="txtTitle" runat="server" Font-Size="Large"></asp:TextBox></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow runat="server">
+                            <asp:TableCell runat="server">Price:</asp:TableCell>
+                            <asp:TableCell runat="server"><asp:TextBox ID="txtPrice" runat="server" Font-Size="Large"></asp:TextBox></asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+            </div>
                     <br />
                     Description:
-            <asp:TextBox ID="txtDesc" runat="server" Height="75px" Style="resize: none" TextMode="MultiLine" Width="350px"></asp:TextBox>
+            <asp:TextBox ID="txtDesc" runat="server" Height="155px" Style="resize: none" TextMode="MultiLine" Width="615px" Font-Size="Large"></asp:TextBox>
                     <br />
                     <asp:Button ID="sbtProduct" runat="server" OnClick="sbtProduct_Click" Text="Submit Product" />
                 </asp:Panel>
@@ -133,10 +158,10 @@
             </div>
             <asp:Panel ID="plProductsView" runat="server">
                 <div class="dashForm">
-                    <p class="content-words">Edit Existing Products<br />
+                    <p class="content-words">Edit Existing Products<br /><br />Category:
                     </p>
-                    Category:
-            <asp:DropDownList ID="ddlCategory2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory2_SelectedIndexChanged">
+                    
+            <asp:DropDownList ID="ddlCategory2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory2_SelectedIndexChanged" Font-Size="Large">
                 <asp:ListItem Selected="True">none</asp:ListItem>
                 <asp:ListItem Value="67a6ec19-a89b-43c9-8b69-a6711673c77e">Fruits</asp:ListItem>
                 <asp:ListItem Value="7c63455d-8753-4288-a006-f6443fb9147c">Vegetables</asp:ListItem>
@@ -144,7 +169,7 @@
                 <asp:ListItem Value="e4db916e-5427-42d0-8a94-6ced86bedabe">Eggs</asp:ListItem>
             </asp:DropDownList>
                     <br />
-                    <asp:RadioButtonList ID="chkbxCategory2" runat="server" DataSourceID="LinqDataSource2" DataTextField="Name" DataValueField="CategoryID" RepeatDirection="Horizontal" Visible="False" AutoPostBack="True" OnSelectedIndexChanged="chkbxCategory2_SelectedIndexChanged">
+                    <asp:RadioButtonList ID="chkbxCategory2" runat="server" DataSourceID="LinqDataSource2" DataTextField="Name" DataValueField="CategoryID" RepeatDirection="Horizontal" Visible="False" AutoPostBack="True" OnSelectedIndexChanged="chkbxCategory2_SelectedIndexChanged" Font-Size="Large">
                         <asp:ListItem Value="4c80b0af-7b83-4d26-95c4-9f23633c6085">Apple</asp:ListItem>
                         <asp:ListItem Value="f0b07dd5-5a30-44e5-839d-5595849e6ed5">Pear</asp:ListItem>
                         <asp:ListItem Value="4029a392-b5c0-4253-a8b9-e0262bab0fb2">Plum</asp:ListItem>
@@ -156,7 +181,7 @@
                         </WhereParameters>
                     </asp:LinqDataSource>
                     <br />
-                    <asp:GridView ID="gvProducts" runat="server" DataKeyNames="ProductID" AutoGenerateColumns="False" Width="750px">
+                    <asp:GridView ID="gvProducts" runat="server" DataKeyNames="ProductID" AutoGenerateColumns="False" Width="750px" Font-Size="Large">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -179,46 +204,47 @@
             <asp:Panel ID="plEditProduct" runat="server" Visible="False">
                 <div class="dashForm">
                     <div class="center">
-                        <asp:ListBox ID="lblErr2" runat="server" ForeColor="Red" Visible="False"></asp:ListBox>
-
+                        <asp:ListBox ID="lblErr2" runat="server" ForeColor="Red" Visible="False" Font-Size="Large"></asp:ListBox>
                     </div>
+                    <asp:Label ID="lblTest" runat="server" Text="Label" Font-Size="Larger"></asp:Label>
                     <br />
-
-                    <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
-                    <asp:Label ID="lblProdID" runat="server" Visible="False"></asp:Label>
                     <br />
-                    <asp:RadioButtonList ID="chkbxImage" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="chkbxImage_SelectedIndexChanged">
+                    <asp:Label ID="lblProdID" runat="server" Visible="False" Font-Size="Large"></asp:Label>
+                    <br />
+                    <asp:RadioButtonList ID="chkbxImage" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="chkbxImage_SelectedIndexChanged" Font-Size="Large">
                         <asp:ListItem Selected="True">Use Existing Photo</asp:ListItem>
                         <asp:ListItem>Upload New Photo</asp:ListItem>
                     </asp:RadioButtonList>
                     <br />
-                    <asp:DropDownList ID="ddlImages" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlImages_SelectedIndexChanged" Width="300px">
+                    <asp:DropDownList ID="ddlImages" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlImages_SelectedIndexChanged" Width="300px" Font-Size="Large">
                         <asp:ListItem Selected="True"></asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <asp:Image ID="imgSample" runat="server" Width="350px" BorderColor="Black" BorderStyle="Solid" />
-                    <asp:FileUpload ID="FileUpload2" runat="server" Visible="False" />
-                    <br />
-                    <br />
-                    Title :
-                    <asp:TextBox ID="txtTitle2" runat="server" Width="240px"></asp:TextBox>
-                    <br />
-                    Price info :<asp:TextBox ID="txtPrice2" runat="server" Width="240px"></asp:TextBox>
+                    <asp:FileUpload ID="FileUpload2" runat="server" Visible="False" Font-Size="Large" />
+                    <asp:Table ID="Table2" runat="server">
+                        <asp:TableRow runat="server">
+                            <asp:TableCell runat="server">Title :</asp:TableCell>
+                            <asp:TableCell runat="server"><asp:TextBox ID="txtTitle2" runat="server" Width="240px" Font-Size="Large"></asp:TextBox></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow runat="server">
+                            <asp:TableCell runat="server">Price info :</asp:TableCell>
+                            <asp:TableCell runat="server"><asp:TextBox ID="txtPrice2" runat="server" Width="240px" Font-Size="Large"></asp:TextBox></asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>              
                     <br />
                     Description :<br />
 
-
-
-                    <asp:TextBox ID="txtDesc2" runat="server" Height="75px" Style="resize: none" TextMode="MultiLine" Width="350px"></asp:TextBox>
+                    <asp:TextBox ID="txtDesc2" runat="server" Height="215px" Style="resize: none" TextMode="MultiLine" Width="685px" Font-Size="Large"></asp:TextBox>
                     <br />
-                    <asp:DropDownList ID="ddlOrderIndex" runat="server">
+                    <asp:DropDownList ID="ddlOrderIndex" runat="server" Font-Size="Large">
                         <asp:ListItem Value="0">TOP</asp:ListItem>
                         <asp:ListItem Value="100">Bottom</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <br />
-                    <asp:Button ID="btnProdUpdate" runat="server" Text="Update" OnClick="btnProdUpdate_Click" />
-                    <asp:Button ID="btnProdUpd8Cancel" runat="server" Text="Cancel" OnClick="btnProdUpd8Cancel_Click" />
+                    <asp:Button ID="btnProdUpdate" runat="server" Text="Update" OnClick="btnProdUpdate_Click" Font-Size="Large" />
+                    <asp:Button ID="btnProdUpd8Cancel" runat="server" Text="Cancel" OnClick="btnProdUpd8Cancel_Click" Font-Size="Large" />
                 </div>
             </asp:Panel>
 
@@ -243,17 +269,17 @@
 
                     <%--javascript image preview source code --%>
 
-                    <input id="avatarUpload" type="file" name="file" onchange="previewFile()" runat="server" />
+                    <input id="avatarUpload" type="file" name="file" onchange="previewFile()" runat="server"/>
                     <%--<asp:FileUpload ID="avatarUpload" runat="server" />--%>
-                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnGalleryImage" />
+                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnGalleryImage" Font-Size="Large" />
                     <asp:Image ID="Avatar" runat="server" ImageUrl="~/Images/NoUser.jpg" Width="225px" />
 
                     <br />
                     <br />
                 </asp:Panel>
                 <asp:Panel ID="plGalleryImageSucc" runat="server">
-                    Success!!!
-                    <asp:Button ID="btnAnotherGalleryImg" runat="server" Text="Add another" OnClick="btnAnotherGalleryImg_Click" />
+                    <p class="content-words">Success!!!</p>
+                    <asp:Button ID="btnAnotherGalleryImg" runat="server" Text="Add another" OnClick="btnAnotherGalleryImg_Click" Font-Size="Large" />
                 </asp:Panel>
                 <asp:GridView ID="gvGallery" runat="server" AutoGenerateColumns="False" DataKeyNames="FileName" OnRowDataBound="gvGallery_RowDataBound">
                     <Columns>
@@ -273,7 +299,7 @@
         </asp:View>
         <asp:View ID="View4" runat="server">
             <div class="dashForm">
-                <asp:Button ID="btnArticleAdd" runat="server" Text="New" OnClick="btnArticleAdd_Click" />
+                <asp:Button ID="btnArticleAdd" runat="server" Text="New" OnClick="btnArticleAdd_Click" Font-Size="Large" />
                 <asp:BulletedList ID="blNewsErr" runat="server" Visible="False">
                 </asp:BulletedList>
                 <asp:Panel ID="plJournal" runat="server">
@@ -284,7 +310,7 @@
 
                     <input id="flNewsSample" type="file" name="file" onchange="previewFile2()" runat="server" />
                     <%--<asp:FileUpload ID="avatarUpload" runat="server" />--%>
-                    <asp:Button ID="btnLoadNewsPic" runat="server" Text="Upload" OnClick="btnLoadNewsPic_Click" />
+                    <asp:Button ID="btnLoadNewsPic" runat="server" Text="Upload" OnClick="btnLoadNewsPic_Click" Font-Size="Large" />
                     <asp:Image ID="imgNewsSample" runat="server" ImageUrl="~/Images/NoUser.jpg" Width="225px" />
 
                     <br />
@@ -297,9 +323,9 @@
                             </div>
                         </ItemTemplate>
                     </asp:DataList>
-                    <asp:TextBox ID="txtArtContent" runat="server" Rows="7" TextMode="MultiLine" Width="600px"></asp:TextBox>
+                    <asp:TextBox ID="txtArtContent" runat="server" Rows="7" TextMode="MultiLine" Width="600px" Font-Size="Large"></asp:TextBox>
 
-                    <asp:Button ID="btnSbtNewArticle" runat="server" OnClick="btnSbtNewArticle_Click" Style="height: 26px" Text="Submit" />
+                    <asp:Button ID="btnSbtNewArticle" runat="server" OnClick="btnSbtNewArticle_Click" Style="height: 26px" Text="Submit" Font-Size="Large" />
 
                 </asp:Panel>
                 <asp:Panel ID="plNews" runat="server">
@@ -319,14 +345,41 @@
                         </Columns>
                     </asp:GridView>
                 </asp:Panel>
+                <asp:Panel ID="plNewsEdit" runat="server" Visible="False">
+                     <asp:BulletedList ID="blEditNewsErr" runat="server"></asp:BulletedList>
+
+                    <%--javascript image preview source code --%>
+
+                   <%-- <input id="flEditNewsImg" type="file" name="file" onchange="previewFile4()" runat="server" />
+                    
+                    <asp:Button ID="btnUpldEditNews" runat="server" Text="Add" OnClick="btnUpldEditNews_Click" Font-Size="Large" />
+                    <asp:Image ID="imgEditNewsImg" runat="server" Width="225px" minwidth="225px" minheight="225px" />
+
+                    <br />
+                    <br />
+                    
+                    <asp:DataList ID="dlEditNewsImgs" runat="server" DataKeyField="fileName" OnItemDataBound="dlEditNewsImgs_ItemDataBound" RepeatDirection="Horizontal">
+                        <ItemTemplate>
+                            <div class="button-container">
+                            <asp:Image ID="stageEditNewsPic" runat="server" CssClass="button-image"/>
+                            <asp:Button ID="btnRemEditNewsPic" runat="server" Text="REMOVE" OnClick="btnRemEditNewsPic_Click" CssClass="button-text"/>
+                                </div>
+                        </ItemTemplate>
+                    </asp:DataList>--%>
+
+                    
+                    <asp:TextBox ID="txtNewsTextEdit" runat="server" Height="150px" TextMode="MultiLine" Width="755px" Font-Size="Large"></asp:TextBox>
+                    <asp:Button ID="btnNewsEditSbt" runat="server" Text="Submit" OnClick="btnNewsEditSbt_Click" Font-Size="Large" />
+
+                </asp:Panel>
             </div>
         </asp:View>
 
         <asp:View ID="View5" runat="server">
             <div class="dashForm">
                 <asp:Panel ID="plHomeContent" runat="server">
-                    <asp:TextBox ID="txtHomeContent" runat="server" Height="238px" TextMode="MultiLine" Width="729px"></asp:TextBox>
-                    <asp:Button ID="btnHomeCntSbt" runat="server" Text="Update" OnClick="btnHomeCntSbt_Click" />
+                    <asp:TextBox ID="txtHomeContent" runat="server" Height="238px" TextMode="MultiLine" Width="729px" Font-Size="Large"></asp:TextBox>
+                    <asp:Button ID="btnHomeCntSbt" runat="server" Text="Update" OnClick="btnHomeCntSbt_Click" Font-Size="Large" />
                 </asp:Panel>
                 <asp:Panel ID="plRotatorAddImage" runat="server">
                     <p class="content-words">Add a new picture to the home page:<br />
@@ -337,15 +390,15 @@
 
                     <input id="rotatorFile" type="file" name="file" onchange="previewFile3()" runat="server" />
                     <%--<asp:FileUpload ID="avatarUpload" runat="server" />--%>
-                    <asp:Button ID="rotatorSbmt" runat="server" Text="Upload" OnClick="rotatorSbmt_Click" />
+                    <asp:Button ID="rotatorSbmt" runat="server" Text="Upload" OnClick="rotatorSbmt_Click" Font-Size="Large" />
                     <asp:Image ID="rotatorImg" runat="server" Width="225px" minwidth="225px" minheight="225px" />
 
                     <br />
                     <br />
                 </asp:Panel>
                 <asp:Panel ID="plRotatorImgAddSucc" runat="server">
-                    Success!!!
-                    <asp:Button ID="btnRotatorAddAnother" runat="server" Text="Add another" />
+                    <p class="content-words">Success!!!</p>
+                    <asp:Button ID="btnRotatorAddAnother" runat="server" Text="Add another" Font-Size="Large" />
                 </asp:Panel>
                 <asp:GridView ID="gvRotatorImgs" runat="server" AutoGenerateColumns="False" DataKeyNames="FileName" OnRowDataBound="gvRotatorImgs_RowDataBound">
                     <Columns>
@@ -364,8 +417,8 @@
             </div>
         </asp:View>
         <asp:View ID="View6" runat="server">
-            <asp:TextBox ID="txtAboutUs" runat="server" Height="400px" TextMode="MultiLine" Width="900px"></asp:TextBox>
-            <asp:Button ID="btnAboutUsSbt" runat="server" Text="Update" OnClick="btnAboutUsSbt_Click" />
+            <asp:TextBox ID="txtAboutUs" runat="server" Height="400px" TextMode="MultiLine" Width="900px" Font-Size="Large"></asp:TextBox>
+            <asp:Button ID="btnAboutUsSbt" runat="server" Text="Update" OnClick="btnAboutUsSbt_Click" Font-Size="Large" />
         </asp:View>
     </asp:MultiView>
 

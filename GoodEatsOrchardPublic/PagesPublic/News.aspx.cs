@@ -59,7 +59,7 @@ namespace GoodEatsOrchardPublic
                 tbl.Rows.Add(dateRow);
                 tbl.Rows.Add(row1);
                 tbl.Rows.Add(row2);
-                tbl.Width = 900;
+                //tbl.Width = 900;
                 tbl.Attributes.Add("class", "newsTbl");
                 plNews.Controls.Add(tbl);
             }

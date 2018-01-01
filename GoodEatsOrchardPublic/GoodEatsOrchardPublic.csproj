@@ -138,13 +138,23 @@
     <Content Include="App_Data\AboutUs.xml" />
     <Content Include="App_Data\Visits.xml" />
     <Content Include="App_Data\Homepage.xml" />
+    <Content Include="favicon.ico" />
+    <Content Include="Images\applesIcon.png" />
+    <Content Include="Images\asianPearsIcon.png" />
+    <Content Include="Images\eggsIcon.png" />
+    <Content Include="Images\flowersIcon.png" />
+    <Content Include="Images\fruitIcon.png" />
+    <Content Include="Images\GEFlogo6.7.2.png" />
     <Content Include="Images\DeerAndFarm.JPG" />
-    <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-02-988.jpg" />
-    <Content Include="Images\Gallery\Dota 2 03-21-2017 22-53-47-127.jpg" />
-    <Content Include="Images\GEFlogowhitev5.png" />
-    <Content Include="Images\IMG_1027.jpg" />
+    <Content Include="Images\Gallery\IMG_2689.JPG" />
+    <Content Include="Images\pearsIcon.png" />
+    <Content Include="Images\plumsIcon.png" />
     <Content Include="Images\Rotator\image1.JPG" />
-    <Content Include="Images\Wildflower.JPG" />
+    <Content Include="Images\Rotator\IMG_1155.JPG" />
+    <Content Include="Images\Rotator\IMG_2614.JPG" />
+    <Content Include="Images\Backgrounds\Wildflower.JPG" />
+    <Content Include="socialIcon3.png" />
+    <Content Include="Images\vegetablesIcon.png" />
     <Content Include="PagesPublic\AsianPearz.aspx" />
     <Content Include="PagesPublic\Eggz.aspx" />
     <Content Include="PagesPublic\Flowerz.aspx" />
@@ -157,20 +167,6 @@
     <Content Include="PagesAdmin\dash.aspx" />
     <Content Include="Images\appleTree.jpg" />
     <Content Include="Images\BirdsEye.JPG" />
-    <Content Include="Images\Products\chkEggs.JPG" />
-    <Content Include="Images\Products\duckEggs.JPG" />
-    <Content Include="Images\Products\Empire.jpg" />
-    <Content Include="Images\Products\Fuji.jpg" />
-    <Content Include="Images\Products\GoldDelicious.jpg" />
-    <Content Include="Images\Products\GrannySmith.jpg" />
-    <Content Include="Images\Products\Gravensteins.jpg" />
-    <Content Include="Images\Products\Liberty.jpg" />
-    <Content Include="Images\Products\thaiBasil.JPG" />
-    <Content Include="Images\Products\thaiPeppers.JPG" />
-    <Content Include="Images\Products\Johnagold2.jpg" />
-    <Content Include="Images\Products\liveDucks.JPG" />
-    <Content Include="Images\Products\IMG_2665.JPG" />
-    <Content Include="Images\Products\IMG_2676.JPG" />
     <Content Include="Mapster\jquery.imagemapster.js" />
     <Content Include="Mapster\jquery.imagemapster.min.js" />
     <Content Include="PagesPublic\Applez.aspx" />
@@ -239,7 +235,6 @@
     <Content Include="PagesPublic\Gallery.aspx" />
     <Content Include="Images\facebook-logo-button.svg" />
     <Content Include="Images\facebook.svg" />
-    <Content Include="Images\GEFlogowhitev4.png" />
     <Content Include="Images\Rotator\image11v2.JPG" />
     <Content Include="Images\Rotator\image2.JPG" />
     <Content Include="Images\Rotator\image22v2.JPG" />
@@ -247,9 +242,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\GEO.css" />
-    <Content Include="Images\Rotator\IMG_1276.jpg" />
     <Content Include="Content\Site.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -510,8 +503,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Backgrounds\" />
     <Folder Include="Images\News\" />
+    <Folder Include="Images\Products\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -529,6 +522,10 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

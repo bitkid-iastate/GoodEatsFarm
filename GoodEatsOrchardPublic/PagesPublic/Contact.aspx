@@ -64,12 +64,12 @@ Indianola, Iowa 50125</p></asp:TableCell>
                 Subject:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
             ControlToValidate="YourSubject" ValidationGroup="save" /><br />
-                <asp:TextBox ID="YourSubject" runat="server" Width="400px" /><br />
+                <asp:TextBox ID="YourSubject" runat="server" Width="370px" /><br />
                 Your Question:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"
             ControlToValidate="Comments" ValidationGroup="save" /><br />
                 <asp:TextBox ID="Comments" runat="server"
-                    TextMode="MultiLine" Rows="10" Width="400px" />
+                    TextMode="MultiLine" Rows="10" Width="370px" />
                 <br />
                 <br />
                 <asp:CheckBox ID="chkbxOptIntoMail" Text="&nbsp&nbsp Would you like to get GoodEats emails? (We only do this sparingly)" runat="server" />

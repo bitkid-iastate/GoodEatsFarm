@@ -13,8 +13,6 @@ namespace GoodEatsOrchardPublic.Code
     }
 
 
-
-
     public class Article
     {
         public string NewsID { get; set; }
@@ -29,7 +27,7 @@ namespace GoodEatsOrchardPublic.Code
         {
             GoodEatsFarmDataContext db = new GoodEatsFarmDataContext();
             var data = db.uspNewsGetSingle(NewsID).FirstOrDefault();
-            NewsID = data.NewsID.ToString();
+            this.NewsID = NewsID;
             Content = data.NewsContent;
             newsDate = data.NewsDate;
 

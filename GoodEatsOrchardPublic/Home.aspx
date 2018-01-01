@@ -9,7 +9,7 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" Visible="false">
+   <%-- <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" Visible="false">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
                 <asp:Image ID="Image6" runat="server" Height="204px" ImageUrl="~/Images/Rotator/image1.jpg" Width="306px" />
@@ -33,7 +33,7 @@
 
             </asp:TableCell>
         </asp:TableRow>
-    </asp:Table>
+    </asp:Table>--%>
     <br />
 
     <div class="container">
@@ -92,7 +92,7 @@
 
     <br />
   <br />
-    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" Width="900px">
+    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
         <asp:TableRow>
             <asp:TableCell runat="server"></asp:TableCell>
             <asp:TableCell><div class="content-words">
@@ -123,7 +123,7 @@
     </asp:Table>
 
     
-    <asp:Table ID="Table4" runat="server" HorizontalAlign="Center">
+    <asp:Table ID="Table4" runat="server" HorizontalAlign="Center" CssClass="msg">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
                 <div id="msg" style:"z-index:1"> <strong>&#x25BC INTERACTIVE MAP &#x25BC</strong> </div>
@@ -131,7 +131,7 @@
             </asp:TableCell></asp:TableRow>
     </asp:Table>
 
-    <asp:Table ID="Table3" runat="server" HorizontalAlign="Center">
+    <asp:Table ID="Table3" runat="server" HorizontalAlign="Center" CssClass="birdsEye">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
                 <asp:Panel ID="Panel1" runat="server">

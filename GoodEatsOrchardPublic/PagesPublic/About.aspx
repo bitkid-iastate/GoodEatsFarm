@@ -2,9 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <br />
     <br />
-    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" Width="850px" CssClass="content-words">
+    <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" CssClass="content-words" Style=" margin:5px;">
 
         <asp:TableRow runat="server">
             <asp:TableCell HorizontalAlign="Center">
@@ -13,7 +12,7 @@
         </asp:TableRow>
         <asp:TableRow runat="server"><asp:TableCell>
 
-       <asp:Image runat="server" Width="350" ImageUrl="~/Images/appleTree.jpg" class="aboutUs"></asp:Image> 
+       <asp:Image runat="server" Width="375" ImageUrl="~/Images/appleTree.jpg" class="aboutUs"></asp:Image> 
             <asp:Literal ID="Literal1" runat="server"></asp:Literal>
 <%--           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             With a growing interest in self-sustainability, Mike and Julee - two information technology professionals living and working in the Des Moines metro, decided

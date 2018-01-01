@@ -9,9 +9,10 @@
     <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <iframe src="https://calendar.google.com/calendar/embed?src=bbbdg62t19jp3j91l28m72msrc%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="900" height="600"></iframe>
+                <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=bbbdg62t19jp3j91l28m72msrc%40group.calendar.google.com&ctz=America/Chicago" style="border: 0"></iframe>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
 
 </asp:Content>
+<%--width="900" height="600"--%>
