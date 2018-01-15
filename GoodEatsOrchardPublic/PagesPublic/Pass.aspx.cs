@@ -39,7 +39,7 @@ namespace GoodEatsOrchardPublic.PublicPages
         //Checks the credentials. If the password is correct, the user is logged in via session variable.
         protected void btnSubmit_Command(object sender, CommandEventArgs e)
         {
-            if (TextBox1.Text == "secret")
+            if (TextBox1.Text == "BanRai2018")
             {
                 Session["loggedIn"] = "yes";
                 lblWrong.Visible = false;
