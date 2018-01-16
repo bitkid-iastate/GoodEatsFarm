@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GEO.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="GoodEatsOrchardPublic.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/Content/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/Content/GEO.css">
-    <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/Mapster/jquery.imagemapster.js"></script>
-    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+   
+<%--    //<link rel="stylesheet" href="/Content/bootstrap.css">
+    //<link rel="stylesheet" type="text/css" href="/Content/GEO.css">--%>
+    <script async type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script async type="text/javascript" src="/Mapster/jquery.imagemapster.js"></script>
+    <script async type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -200,3 +201,14 @@
 
 
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+     <script type="text/javascript">
+         /* First CSS File */
+         var giftofspeed = document.createElement('link');
+         giftofspeed.rel = 'stylesheet';
+         giftofspeed.href = '/Content/bootstrap.css';
+         giftofspeed.type = 'text/css';
+         var godefer = document.getElementsByTagName('link')[0];
+         godefer.parentNode.insertBefore(giftofspeed, godefer);
+        </script>
+    </asp:Content>

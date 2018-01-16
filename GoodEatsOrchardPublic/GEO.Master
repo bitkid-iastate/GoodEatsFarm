@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <title>Good Eats Farm & Orchard</title>
     <meta name="description" content="Central Iowa's premier source for fresh fruits, eggs, and other farm and orchard products!" />
-    <meta name="keywords" content="Good Eats Farm & Orchard,Good Eats Farm & Orchard Indianola,Good Eats Farm,orchard,farm,Iowa,Indianola,produce,fruits,fresh fruits,vegetables,fresh vegetables,flowers,eggs,fresh eggs,farm eggs,duck eggs,chicken eggs,chickens,ducks">
+    <meta name="keywords" content="Good Eats Farm & Orchard,Good Eats Farm & Orchard Indianola,Good Eats Farm,Good Eats Farm and Orchard,orchard,farm,Iowa,Ia,Indianola,produce,fruits,fresh fruits,vegetables,fresh vegetables,flowers,eggs,fresh eggs,farm eggs,duck eggs,chicken eggs,chickens,ducks">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://goodeatsfarm.com/" rel="canonical" />
     <!-- Twitter Card data -->
     <%--<meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@publisher_handle">
@@ -18,17 +20,15 @@
     <%--<meta name="twitter:image" content="http://www.example.com/image.jpg">--%>
     <!-- Open Graph data -->
     <meta property="og:title" content="Good Eats Farm & Orchard" />
-    <meta property="og:type" content="business.business" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.goodeatsfarm.com/" />
-    <meta property="og:image" content="http://www.goodeatsfarm.com/socialIcon3.png" />
+  <%--  <meta property="og:image" content="http://www.goodeatsfarm.com/socialIcon3.png" />--%>
     <meta property="og:description" content="Central Iowa's premier source for fresh fruits, eggs, and other farm and orchard products!" />
     <meta property="og:site_name" content="Good Eats Farm & Orchard" />
 <%--    <meta property="fb:admins" content="Facebook numeric ID" />--%>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="Content/GEO.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -145,8 +145,26 @@
 
         <br />
         <br />
-        <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a class="footerA" href="/PagesPublic/Pass.aspx">Login</a></footer>
+        <footer>&copy; <%: DateTime.Now.Year %> &nbsp Good Eats Farm and Orchard &nbsp <a class="footerA" href="/PagesPublic/Pass.aspx">Login</a>
+        <script type="text/javascript">
+            /* First CSS File */
+            var giftofspeed = document.createElement('link');
+            giftofspeed.rel = 'stylesheet';
+            giftofspeed.href = 'Content/GEO.css';
+            giftofspeed.type = 'text/css';
+            var godefer = document.getElementsByTagName('link')[0];
+            godefer.parentNode.insertBefore(giftofspeed, godefer);
 
+            /* Second CSS File */
+            var giftofspeed2 = document.createElement('link');
+            giftofspeed2.rel = 'stylesheet';
+            giftofspeed2.href = 'https://fonts.googleapis.com/css?family=Lato';
+            var godefer2 = document.getElementsByTagName('link')[0];
+            godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+
+            </script>
+                <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+        </footer>
     </form>
 
 </body>
